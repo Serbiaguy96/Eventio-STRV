@@ -1,8 +1,8 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import { AppMainContainer } from "./assets/styles/globalStyles";
 
 const App = () => {
-  return <div></div>
-}
+  return <AppMainContainer>STRV Test</AppMainContainer>;
+};
 
 export default App;
