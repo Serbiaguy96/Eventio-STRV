@@ -1,8 +1,16 @@
 import React from "react";
-import { AppMainContainer } from "./assets/styles/globalStyles";
+import { Switch, Route } from "react-router";
+import { AppMainContainer } from "./global/globalStyles";
+import Page404 from "./components/Pages/Page404";
 
 const App = () => {
-  return <AppMainContainer>STRV Test</AppMainContainer>;
+  return (
+    <AppMainContainer>
+      <Switch>
+        <Route component={Page404} />
+      </Switch>
+    </AppMainContainer>
+  );
 };
 
 export default App;

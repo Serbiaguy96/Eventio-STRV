@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Hind";
+  src: local("Hind"), url("./assets/fonts/Hind-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: local("Playfair Display"),
+    url("./assets/fonts/PlayfairDisplay-Regular.ttf") format("truetype");
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
