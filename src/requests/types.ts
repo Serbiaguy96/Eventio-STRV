@@ -1,6 +1,7 @@
-export interface Error {
-  message: string;
-  field?: string;
+export interface EventioError {
+  message: string | null;
+  error: string;
+  stack: string | null;
 }
 
-export type AError = Error[] | any;
+export type AError = EventioError[] | any;

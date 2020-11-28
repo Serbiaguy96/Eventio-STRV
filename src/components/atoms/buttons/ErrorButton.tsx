@@ -4,8 +4,15 @@ import { useThemeColors } from "../../../providers/ConnectedThemeProvider/Connec
 import { CustomButtonProps } from "./types";
 
 const ErrorButton = ({ label, action }: CustomButtonProps) => {
-  const { darkGray } = useThemeColors();
-  return <DefaultButton label={label} action={action} bgColor={darkGray} />;
+  const { darkGray, hoverDarkGray } = useThemeColors();
+  return (
+    <DefaultButton
+      label={label}
+      action={action}
+      bgColor={darkGray}
+      hoverColor={hoverDarkGray}
+    />
+  );
 };
 
 export default ErrorButton;

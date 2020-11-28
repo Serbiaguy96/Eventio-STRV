@@ -14,7 +14,7 @@ const Page401 = () => {
         title={formatMessage({ id: "error.401" })}
         description={formatMessage({ id: "error.401.description" })}
         buttonString={formatMessage({ id: "sign_in.main" })}
-        buttonAction={() => push("/signIn")}
+        buttonAction={() => push("/signIn", { errorStatusCode: null })}
       />
     </NotLoggedUserLayout>
   );

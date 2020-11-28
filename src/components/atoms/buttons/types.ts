@@ -1,11 +1,15 @@
-export interface DefaultButtonProps {
+export type DefaultButtonProps = {
   label: string;
-  action: () => void;
+  disabled?: boolean;
+  loading?: boolean;
+  action?: () => void;
   textColor?: string;
   bgColor: string;
-}
+  hoverColor: string;
+  type?: "button" | "submit" | "reset" | undefined;
+};
 
 export type CustomButtonProps = Omit<
   DefaultButtonProps,
-  "textColor" | "bgColor"
+  "type" | "bgColor" | "textColor" | "hoverColor"
 >;

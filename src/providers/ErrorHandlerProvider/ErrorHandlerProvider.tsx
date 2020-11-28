@@ -3,10 +3,15 @@ import { useLocation } from "react-router";
 import get from "lodash/fp/get";
 import Page401 from "../../components/pages/Page401";
 import CommonErrorPage from "../../components/pages/CommonErrorPage";
+import Page404 from "../../components/pages/Page404";
+
+const availableAppPaths = ["/", "/signIn"];
 
 const ErrorHandlerProvider: FC = ({ children }) => {
-  const { state } = useLocation();
+  const { state, pathname } = useLocation();
   const errorStatusCode = get("errorStatusCode", state);
+
+  //if (!availableAppPaths.includes(pathname)) return <Page404 />;
 
   if (errorStatusCode === 401) return <Page401 />;
 

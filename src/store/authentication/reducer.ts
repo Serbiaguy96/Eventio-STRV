@@ -1,10 +1,21 @@
-import {AuthenticationActionTypes, AuthenticationState} from "./types";
-import {RECEIVE_USER_DATA, REMOVE_USER_DATA, SET_IS_LOADING} from "./actionTypes";
+import {
+  AuthenticationActionTypes,
+  AuthenticationState,
+  UserType,
+} from "./types";
+import {
+  RECEIVE_REQUEST_ERROR,
+  RECEIVE_USER_DATA,
+  REMOVE_USER_DATA,
+  SET_IS_LOADING,
+} from "./actionTypes";
+import { EventioError } from "../../requests/types";
 
 const initialState: AuthenticationState = {
   user: null,
   isLoading: false,
   loggedIn: false,
+  error: {} as EventioError,
 };
 
 const authenticationReducer = (
@@ -17,6 +28,11 @@ const authenticationReducer = (
         ...state,
         loggedIn: true,
         user: action.payload.userData,
+      };
+    case RECEIVE_REQUEST_ERROR:
+      return {
+        ...state,
+        error: action.payload.errorData,
       };
     case REMOVE_USER_DATA:
       return {

@@ -5,6 +5,10 @@ export type ColorsType = {
   lightGreen: string;
   errorRed: string;
   backgroundColor: string;
+  hoverDarkGray: string;
+  hoverLightGray: string;
+  hoverLightGreen: string;
+  hoverErrorRed: string;
 };
 
 export type Theme = {

@@ -1,6 +1,7 @@
 import axiosWrapper from "../axiosWrapper";
-import { RefreshTokenReturnType } from "./types";
+import { RefreshTokenReturnType, SignInFormType } from "./types";
 import { userAuthentication } from "./urlParsers";
+import { UserType } from "../../store/authentication/types";
 
 export const refreshTokenAuthentication = (refreshToken: string) =>
   axiosWrapper<RefreshTokenReturnType>({
@@ -9,4 +10,11 @@ export const refreshTokenAuthentication = (refreshToken: string) =>
     data: {
       refreshToken,
     },
+  });
+
+export const logInUser = ({ email, password }: SignInFormType) =>
+  axiosWrapper<UserType>({
+    url: userAuthentication(),
+    method: "POST",
+    data: { email, password },
   });

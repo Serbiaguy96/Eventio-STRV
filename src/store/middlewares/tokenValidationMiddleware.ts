@@ -7,7 +7,7 @@ import { refreshTokenAuthentication } from "../../requests/authentication/reques
 import { getRouterPathname } from "../router/selectors";
 import { removeUserData } from "../authentication/actionCreators";
 
-const isAuthTokenExpired = (exp: number) => Date.now() > exp * 1000;
+export const isAuthTokenExpired = (exp: number) => Date.now() > exp * 1000;
 
 const tokenValidationMiddleware: MiddlewareType<RootState> = (store) => (
   next
@@ -25,7 +25,7 @@ const tokenValidationMiddleware: MiddlewareType<RootState> = (store) => (
   if (isAuthTokenExpired(exp) && refreshToken) {
     refreshTokenAuthentication(refreshToken)
       .then(({ headers }) => {
-        localStorage.setItem("authToken", headers.Authorization);
+        localStorage.setItem("authToken", headers.authorization);
         next(action);
       })
       .catch((error: AxiosError) => {
@@ -38,10 +38,7 @@ const tokenValidationMiddleware: MiddlewareType<RootState> = (store) => (
         }
         const pathname = getRouterPathname(state);
         store.dispatch(
-          replace(
-            { pathname, search: "", hash: "" },
-            { errorStatusCode: error.response?.status }
-          )
+          replace(pathname, { errorStatusCode: error.response?.status })
         );
       });
   } else {

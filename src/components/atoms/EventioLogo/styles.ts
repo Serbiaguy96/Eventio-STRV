@@ -7,8 +7,8 @@ export const LogoContainer = styled.div<{ logoTheme: LogoTheme }>`
   font-size: 3rem;
   letter-spacing: 4px;
   position: fixed;
-  left: 1rem;
-  top: 1rem;
+  left: 40px;
+  top: 10px;
   z-index: 1000;
   cursor: pointer;
 
@@ -17,5 +17,7 @@ export const LogoContainer = styled.div<{ logoTheme: LogoTheme }>`
 
   @media only screen and (max-width: 1024px) {
     color: ${({ theme }) => theme.colors.darkGray};
+    left: 24px;
+    top: 29px;
   }
 `;

@@ -1,18 +1,19 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Switch, Route } from "react-router";
-import { AppMainContainer } from "./global/globalStyles";
+import SignInPage from "./components/pages/SignInPage";
+import PrivateRoute from "./components/layouts/PrivateRoute";
 import Page404 from "./components/pages/Page404";
-import ErrorHandlerProvider from "./providers/ErrorHandlerProvider";
+import Dashboard from "./components/pages/Dashboard";
 
 const App = () => {
   return (
-    <AppMainContainer>
-      <ErrorHandlerProvider>
-        <Switch>
-          <Route component={Page404} />
-        </Switch>
-      </ErrorHandlerProvider>
-    </AppMainContainer>
+    <Fragment>
+      <Switch>
+        <Route path="/signIn" component={SignInPage} />
+        <PrivateRoute exact path="/" component={Dashboard} />
+        <Route component={Page404} />
+      </Switch>
+    </Fragment>
   );
 };
 

@@ -20,10 +20,12 @@ export const ErrorPageBgImage = styled.div`
   top: 50%;
   left: calc(50% - 150px);
   transform: translate(-50%, -50%);
-  background-image: ${bgImage};
+  background-image: url(${bgImage});
   background-size: cover;
-  background-position: center;
-  opacity: 0.06;
+
+  @media only screen and (max-width: 1024px) {
+    display: none;
+  }
 `;
 
 export const ErrorTitle = styled.span`
@@ -44,7 +46,6 @@ export const ErrorDescription = styled.p`
   line-height: 24px;
   color: ${({ theme }) => theme.colors.lightGray};
   margin: 0;
-  margin-bottom: 30px;
   white-space: pre;
 
   @media only screen and (max-width: 1024px) {

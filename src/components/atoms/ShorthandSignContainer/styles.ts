@@ -2,9 +2,8 @@ import styled from "@emotion/styled";
 
 export const SignContainer = styled.div`
   position: fixed;
-  margin-top: 40px;
-  top: 0;
-  right: 1rem;
+  top: 40px;
+  right: 39px;
   font-family: Hind;
   font-size: 14px;
   line-height: 24px;
@@ -13,6 +12,7 @@ export const SignContainer = styled.div`
     position: relative;
     top: auto;
     right: auto;
+    margin-top: 20px;
   }
 `;
 

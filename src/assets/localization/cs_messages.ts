@@ -1,6 +1,7 @@
 export const cs_messages = {
   "common.app": "Eventio",
   "common.refresh": "Aktualizovat",
+  "sign_in.mandatory_field": "Toto pole je mandatorní! Nebo Mandalorní?",
 
   "layout.han_solo_quote": '"Skvěle kluku. Aby ti to nevlezlo do hlavy',
   "layout.han_solo": "Han Solo",

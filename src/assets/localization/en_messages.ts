@@ -1,6 +1,7 @@
 export const en_messages = {
   "common.app": "Eventio",
   "common.refresh": "Refresh",
+  "common.mandatory_field": "This field is mandatory! Or Mandalorioany?",
 
   "layout.han_solo_quote": "“Great, kid. Don't get cocky.“",
   "layout.han_solo": "Han Solo",
@@ -26,5 +27,5 @@ export const en_messages = {
   "error.404": "404 Error - page not found",
   "error.401": "401 Error - user unauthorized",
   "error.401.description":
-    "It looks like Han Solo stole all of our tokens\nand smuggled them away.Pleas press the sign in\nbutton to retrieve new ones.",
+    "It looks like Han Solo stole all of our tokens\nand smuggled them away. Pleas press the sign in\nbutton to retrieve new ones.",
 };

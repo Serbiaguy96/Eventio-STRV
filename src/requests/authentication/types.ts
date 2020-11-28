@@ -6,3 +6,8 @@ export interface RefreshTokenReturnType {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface SignInFormType {
+  email: string;
+  password: string;
+}

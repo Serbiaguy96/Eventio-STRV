@@ -1,6 +1,6 @@
 import axios, { AxiosResponse, AxiosRequestConfig } from "axios";
 import { AError } from "./types";
-import { API_KEY } from "../global/globalConstants";
+import { API_KEY, BASE_URL } from "../global/globalConstants";
 
 export interface ResponseWithError<T> extends AxiosResponse<T> {
   errors?: AError;
@@ -10,6 +10,7 @@ function updateRequestConfig(config: AxiosRequestConfig): AxiosRequestConfig {
   const authToken = localStorage.getItem("authToken");
   const basicConfig: AxiosRequestConfig = {
     ...config,
+    baseURL: BASE_URL,
     headers: {
       "Content-Type": "application/json",
       APIKey: API_KEY,

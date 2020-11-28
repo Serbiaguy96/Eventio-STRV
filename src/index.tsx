@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { ConnectedRouter } from "connected-react-router";
+import { ConnectedRouter } from "connected-react-router/immutable";
 import store, { history } from "./store/configureStore";
 import ConnectedThemeProvider from "./providers/ConnectedThemeProvider";
 import App from "./App";
+import ErrorHandlerProvider from "./providers/ErrorHandlerProvider";
 import ConnectedIntlProvider from "./providers/ConnectedIntlProvider";
 
 import "./assets/fonts/Hind-Regular.ttf";
@@ -14,11 +15,15 @@ import "./index.css";
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedThemeProvider>
-      <ConnectedIntlProvider>
-        <ConnectedRouter history={history}>
-          <App />
-        </ConnectedRouter>
-      </ConnectedIntlProvider>
+      <ConnectedRouter history={history}>
+        <ConnectedThemeProvider>
+          <ConnectedIntlProvider>
+            <ErrorHandlerProvider>
+              <App />
+            </ErrorHandlerProvider>
+          </ConnectedIntlProvider>
+        </ConnectedThemeProvider>
+      </ConnectedRouter>
     </ConnectedThemeProvider>
   </Provider>,
   document.getElementById("root")
