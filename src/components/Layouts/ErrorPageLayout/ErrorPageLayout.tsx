@@ -1,5 +1,12 @@
 import React from "react";
-import { ErrorPageContainer } from "./styles";
+import {
+  ErrorDescription,
+  ErrorPageBgImage,
+  ErrorPageContainer,
+  ErrorPageContentContainer,
+  ErrorTitle,
+} from "./styles";
+import { ErrorButton } from "../../atoms/buttons";
 
 export type ErrorPageLayoutProps = {
   title: string;
@@ -14,7 +21,16 @@ const ErrorPageLayout = ({
   buttonString,
   buttonAction,
 }: ErrorPageLayoutProps) => {
-  return <ErrorPageContainer>pico</ErrorPageContainer>;
+  return (
+    <ErrorPageContainer>
+      <ErrorPageBgImage />
+      <ErrorPageContentContainer>
+        <ErrorTitle>{title}</ErrorTitle>
+        <ErrorDescription>{description}</ErrorDescription>
+        <ErrorButton label={buttonString} action={buttonAction} />
+      </ErrorPageContentContainer>
+    </ErrorPageContainer>
+  );
 };
 
 export default ErrorPageLayout;

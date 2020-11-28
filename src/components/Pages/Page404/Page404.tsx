@@ -1,7 +1,7 @@
 import React from "react";
 import { useIntl } from "react-intl";
 import { useHistory } from "react-router";
-import NotLoggedUserLayout from "../../Layouts/NotLoggedUserLayout";
+import NotLoggedUserLayout from "../../layouts/NotLoggedUserLayout";
 import ErrorPageLayout from "../../layouts/ErrorPageLayout";
 
 const Page404 = () => {

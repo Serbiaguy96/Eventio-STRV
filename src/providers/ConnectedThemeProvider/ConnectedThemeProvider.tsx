@@ -11,6 +11,8 @@ const APP_COLORS: ColorsType = {
   backgroundColor: "#F2F2F2",
 };
 
+export const useThemeColors = (): ColorsType => APP_COLORS;
+
 const ConnectedThemeProvider: FC = ({ children }) => {
   return (
     <ThemeProvider theme={{ colors: APP_COLORS }}>{children}</ThemeProvider>

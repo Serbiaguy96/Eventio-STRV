@@ -9,11 +9,18 @@ import {
   QuoteDivider,
   QuoteString,
 } from "./styles";
+import EventioLogo from "../../atoms/EventioLogo";
+import useIsMobile from "../../../utils/useIsMobile";
+import ShorthandSignContainer from "../../atoms/ShorthandSignContainer";
 
 const NotLoggedUserLayout: FC = ({ children }) => {
   const { formatMessage } = useIntl();
+  const isMobile = useIsMobile();
+
   return (
     <NotLoggedUserLayoutContainer>
+      <EventioLogo theme="light" />
+      <ShorthandSignContainer visible={!isMobile} />
       <AsideImageContainer>
         <QuoteContainer>
           <QuoteString>

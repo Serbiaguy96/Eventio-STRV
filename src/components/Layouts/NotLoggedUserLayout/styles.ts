@@ -80,8 +80,12 @@ export const LayoutContentContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  width: calc(100% - 500px);
 
   @media only screen and (max-width: 1024px) {
     margin-left: 0;
+    width: 100%;
+    padding: 2rem;
   }
 `;
