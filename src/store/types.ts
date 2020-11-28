@@ -1,9 +1,15 @@
 import { ThunkAction } from "redux-thunk";
 import { Action } from "redux";
-import { RouterState } from "connected-react-router";
-import { AuthenticationState } from "./authentication/types";
-import { EventsState } from "./events/types";
-import { LocalizationState } from "./localization/types";
+import { CallHistoryMethodAction, RouterState } from "connected-react-router";
+import {
+  AuthenticationActionTypes,
+  AuthenticationState,
+} from "./authentication/types";
+import { EventsActionsTypes, EventsState } from "./events/types";
+import {
+  LocalizationActionsType,
+  LocalizationState,
+} from "./localization/types";
 
 export interface RootState {
   authentication: AuthenticationState;
@@ -16,5 +22,11 @@ export type EventioThunk<ReturnType = void> = ThunkAction<
   ReturnType,
   RootState,
   unknown,
-  Action<string>
+  Action
 >;
+
+export type ActionTypes =
+  | AuthenticationActionTypes
+  | EventsActionsTypes
+  | LocalizationActionsType
+  | CallHistoryMethodAction;

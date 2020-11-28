@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { useIntl } from "react-intl";
 import {
   AsideImageContainer,
   LayoutContentContainer,
@@ -8,7 +9,6 @@ import {
   QuoteDivider,
   QuoteString,
 } from "./styles";
-import { useIntl } from "react-intl";
 
 const NotLoggedUserLayout: FC = ({ children }) => {
   const { formatMessage } = useIntl();

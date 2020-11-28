@@ -22,6 +22,9 @@ export const cs_messages = {
 
   "error.something": "Něco se stalo",
   "error.description":
-    "Zdá se že Darth Vader právě zasáhnul naší stránku a shodil ji. Zmáčkni prosím aktualizační tlačítko a vše by mělo být zase dobré.",
+    "Zdá se že Darth Vader právě zasáhnul naší stránku a shodil ji.\nZmáčkni prosím aktualizační tlačítko a vše by mělo být zase dobré.",
   "error.404": "404 Chyba - stránka nenalezena",
+  "error.401": "401 Chyba - user unauthorized",
+  "error.401.description":
+    "Vypadá to že Han Solo vzal všechny naše tokeny\na propašoval je pryč. Zmáčkní prosím přihlašovací\ntlačítko pro získání nových.",
 };

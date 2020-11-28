@@ -22,6 +22,9 @@ export const en_messages = {
 
   "error.something": "Something went wrong",
   "error.description":
-    "Seems like Darth Vader just hits our website and drops it down. Please press the refresh button and everything should be fine again.",
+    "Seems like Darth Vader just hits our website and drops it down.\nPlease press the refresh button and everything should be fine again.",
   "error.404": "404 Error - page not found",
+  "error.401": "401 Error - user unauthorized",
+  "error.401.description":
+    "It looks like Han Solo stole all of our tokens\nand smuggled them away.Pleas press the sign in\nbutton to retrieve new ones.",
 };
