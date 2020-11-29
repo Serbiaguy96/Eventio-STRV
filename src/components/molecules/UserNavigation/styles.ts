@@ -3,8 +3,8 @@ import { ArrowDropDown } from "@material-ui/icons";
 
 export const UserAccountContainer = styled.div`
   position: fixed;
-  top: 40px;
-  right: 100px;
+  top: 30px;
+  right: 50px;
 
   display: flex;
   flex-direction: row;
@@ -20,10 +20,9 @@ export const UserInitials = styled.span`
   align-items: center;
   font-family: Hind;
   font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 16px;
   text-transform: uppercase;
+  margin-right: 5px;
 
   ${({ theme }) =>
     `color: ${theme.colors.lightGray}; background-color: ${theme.colors.lighterGray}`};
@@ -39,13 +38,10 @@ export const UserName = styled.span`
   line-height: 24px;
   text-transform: capitalize;
 
-  color: ${({ theme }) => theme.colors.lighterGray};
-  margin: 0 5px;
-`;
+  color: ${({ theme }) => theme.colors.lightGray};
+  margin-right: 5px;
 
-export const ArrowIcon = styled(ArrowDropDown)<{ active: boolean }>`
-  color: ${({ theme }) => theme.colors.lighterGray};
-  font-size: 14px;
-
-  ${({ active }) => active && "transform: rotation(180deg);"}
+  @media only screen and (max-width: 1024px) {
+    display: none;
+  }
 `;

@@ -5,6 +5,7 @@ import { UserType } from "./types";
 import { receiveUserData, removeUserData } from "./actionCreators";
 import { SignInFormType } from "../../requests/authentication/types";
 import { useHistory } from "react-router";
+import { AUTH_TOKEN, REFRESH_TOKEN } from "../../global/globalConstants";
 
 export const useLogInUser = () => {
   const dispatch = useDispatch();
@@ -27,8 +28,8 @@ export const useLogUserOut = () => {
   const dispatch = useDispatch();
   const { push } = useHistory();
   return useCallback(() => {
-    localStorage.removeItem("authToken");
-    localStorage.removeItem("refreshToken");
+    localStorage.removeItem(AUTH_TOKEN);
+    localStorage.removeItem(REFRESH_TOKEN);
     dispatch(removeUserData());
     push("/");
   }, [dispatch]);

@@ -1,8 +1,18 @@
 import { useDispatch } from "react-redux";
 import { useCallback } from "react";
-import { push } from "connected-react-router";
+import { push, replace } from "connected-react-router";
+import { RouterStateType } from "./types";
 
-export const usePushAction = () => {
+export const useHistoryActions = () => {
   const dispatch = useDispatch();
-  return useCallback((route: string) => dispatch(push(route)), [dispatch]);
+
+  const pushAction = (route: string) => dispatch(push(route));
+
+  const replaceAction = (path: string, routerState?: RouterStateType) =>
+    dispatch(replace(path, routerState));
+
+  return {
+    push: useCallback(pushAction, [dispatch]),
+    replace: useCallback(replaceAction, [dispatch]),
+  };
 };

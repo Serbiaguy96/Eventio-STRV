@@ -21,6 +21,9 @@ export const cs_messages = {
   "sign_up.last_name": "Příjmení",
   "sign_up.password_again": "Heslo znovu",
 
+  "account.log_out": "Odhlásit se",
+  "account.profile": "Profil",
+
   "error.something": "Něco se stalo",
   "error.description":
     "Zdá se že Darth Vader právě zasáhnul naší stránku a shodil ji.\nZmáčkni prosím aktualizační tlačítko a vše by mělo být zase dobré.",

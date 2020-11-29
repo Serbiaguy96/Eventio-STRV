@@ -1,17 +1,17 @@
 import React, { Fragment } from "react";
-import { Switch, Route } from "react-router";
+import { Switch } from "react-router";
 import SignInPage from "./components/pages/SignInPage";
-import PrivateRoute from "./components/layouts/PrivateRoute";
 import Page404 from "./components/pages/Page404";
 import Dashboard from "./components/pages/Dashboard";
+import PublicRoute from "./components/layouts/PublicRoute";
 
 const App = () => {
   return (
     <Fragment>
       <Switch>
-        <Route path="/signIn" component={SignInPage} />
-        <PrivateRoute exact path="/" component={Dashboard} />
-        <Route component={Page404} />
+        <PublicRoute path="/signIn" component={SignInPage} />
+        <PublicRoute exact path="/" component={Dashboard} />
+        <PublicRoute component={Page404} />
       </Switch>
     </Fragment>
   );

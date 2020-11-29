@@ -1,6 +1,10 @@
 import { ThunkAction } from "redux-thunk";
 import { Action } from "redux";
-import { CallHistoryMethodAction, RouterState } from "connected-react-router";
+import {
+  CallHistoryMethodAction,
+  LocationChangeAction,
+  RouterState,
+} from "connected-react-router";
 import {
   AuthenticationActionTypes,
   AuthenticationState,
@@ -28,5 +32,6 @@ export type EventioThunk<ReturnType = void> = ThunkAction<
 export type ActionTypes =
   | AuthenticationActionTypes
   | EventsActionsTypes
-  | LocalizationActionsType
-  | CallHistoryMethodAction;
+  | LocalizationActionsType;
+
+export type RouterActionTypes = CallHistoryMethodAction | LocationChangeAction;

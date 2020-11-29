@@ -1,26 +1,19 @@
 import React, { FC } from "react";
-import { useIntl } from "react-intl";
 import {
   AsideImageContainer,
   LayoutContentContainer,
-  NotLoggedUserLayoutContainer,
   QuoteAuthor,
   QuoteContainer,
   QuoteDivider,
   QuoteString,
 } from "./styles";
-import EventioLogo from "../../atoms/EventioLogo";
-import useIsMobile from "../../../utils/useIsMobile";
-import ShorthandSignContainer from "../../atoms/ShorthandSignContainer";
+import { useIntl } from "react-intl";
+import { Fragment } from "react";
 
-const NotLoggedUserLayout: FC = ({ children }) => {
+const AsidePictureLayout: FC = ({ children }) => {
   const { formatMessage } = useIntl();
-  const isMobile = useIsMobile();
-
   return (
-    <NotLoggedUserLayoutContainer>
-      <EventioLogo theme="light" />
-      <ShorthandSignContainer visible={!isMobile} />
+    <Fragment>
       <AsideImageContainer>
         <QuoteContainer>
           <QuoteString>
@@ -31,8 +24,8 @@ const NotLoggedUserLayout: FC = ({ children }) => {
         </QuoteContainer>
       </AsideImageContainer>
       <LayoutContentContainer>{children}</LayoutContentContainer>
-    </NotLoggedUserLayoutContainer>
+    </Fragment>
   );
 };
 
-export default NotLoggedUserLayout;
+export default AsidePictureLayout;

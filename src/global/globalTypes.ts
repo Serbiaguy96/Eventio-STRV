@@ -12,5 +12,5 @@ export interface AppLayoutProps {
   component?: ComponentType<any>;
   render?: (matchProps: any) => ReactNode;
   exact?: boolean;
-  path: string;
+  path?: string;
 }

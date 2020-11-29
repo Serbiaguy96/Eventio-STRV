@@ -1,23 +1,18 @@
 import React from "react";
 import { useIntl } from "react-intl";
-import { Controller, useForm } from "react-hook-form";
-import NotLoggedUserLayout from "../../layouts/NotLoggedUserLayout";
+import { useForm } from "react-hook-form";
 import {
   SignInForm,
   SignInFormContainer,
   SignInMessage,
   SignInTitle,
 } from "./styles";
-import {
-  EventioTextInput,
-  FormHookPasswordInput,
-  FormHookTextInput,
-} from "../../atoms/inputs";
-import EventioPasswordInput from "../../atoms/inputs/EventioPasswordInput";
+import { FormHookPasswordInput, FormHookTextInput } from "../../atoms/inputs";
 import { SubmitButton } from "../../atoms/buttons";
 import { SignInFormType } from "../../../requests/authentication/types";
 import ShorthandSignContainer from "../../atoms/ShorthandSignContainer";
 import useIsMobile from "../../../utils/useIsMobile";
+import AsidePictureLayout from "../../layouts/AsidePictureLayout";
 
 export type SignInPageProps = {
   wrongCredentialsError: boolean;
@@ -32,7 +27,6 @@ const SignInPage = ({
 }: SignInPageProps) => {
   const { formatMessage } = useIntl();
   const isMobile = useIsMobile();
-
   const { handleSubmit, control, errors } = useForm<SignInFormType>();
 
   const submitHandler = (data: SignInFormType) => {
@@ -42,7 +36,7 @@ const SignInPage = ({
   };
 
   return (
-    <NotLoggedUserLayout>
+    <AsidePictureLayout>
       <SignInFormContainer>
         <SignInTitle>{formatMessage({ id: "sign_in.title" })}</SignInTitle>
         <SignInMessage error={wrongCredentialsError}>
@@ -73,7 +67,7 @@ const SignInPage = ({
           />
         </SignInForm>
       </SignInFormContainer>
-    </NotLoggedUserLayout>
+    </AsidePictureLayout>
   );
 };
 

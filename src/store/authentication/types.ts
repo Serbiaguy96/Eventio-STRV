@@ -8,7 +8,7 @@ import { EventioError } from "../../requests/types";
 
 export type UserType = {
   _id: string;
-  firsName: string;
+  firstName: string;
   lastName: string;
   email: string;
   _v: number;

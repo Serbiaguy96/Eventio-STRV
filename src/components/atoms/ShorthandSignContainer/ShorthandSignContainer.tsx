@@ -14,14 +14,14 @@ const ShorthandSignContainer = ({ visible }: ShorthandSignContainerType) => {
 
   if (!visible) return null;
 
-  if (pathname === "signUp") {
+  if (pathname === "/signIn") {
     return (
       <SignContainer>
         <LighterGraySpan>
-          {formatMessage({ id: "layout.account" })}
+          {formatMessage({ id: "layout.no_account" })}
         </LighterGraySpan>
-        <LightGraySpan onClick={() => push("signIn")}>
-          {formatMessage({ id: "sign_in.main" })}
+        <LightGraySpan onClick={() => push("/signUp")}>
+          {formatMessage({ id: "sign_up.main" })}
         </LightGraySpan>
       </SignContainer>
     );
@@ -30,10 +30,10 @@ const ShorthandSignContainer = ({ visible }: ShorthandSignContainerType) => {
   return (
     <SignContainer>
       <LighterGraySpan>
-        {formatMessage({ id: "layout.no_account" })}
+        {formatMessage({ id: "layout.account" })}
       </LighterGraySpan>
-      <LightGraySpan onClick={() => push("signUp")}>
-        {formatMessage({ id: "sign_up.main" })}
+      <LightGraySpan onClick={() => push("/signIn")}>
+        {formatMessage({ id: "sign_in.main" })}
       </LightGraySpan>
     </SignContainer>
   );

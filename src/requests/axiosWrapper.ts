@@ -1,13 +1,16 @@
 import axios, { AxiosResponse, AxiosRequestConfig } from "axios";
 import { AError } from "./types";
-import { API_KEY, BASE_URL } from "../global/globalConstants";
+import { API_KEY, AUTH_TOKEN, BASE_URL } from "../global/globalConstants";
 
 export interface ResponseWithError<T> extends AxiosResponse<T> {
   errors?: AError;
 }
 
-function updateRequestConfig(config: AxiosRequestConfig): AxiosRequestConfig {
-  const authToken = localStorage.getItem("authToken");
+function updateRequestConfig(
+  config: AxiosRequestConfig,
+  auth?: boolean
+): AxiosRequestConfig {
+  const authToken = localStorage.getItem(AUTH_TOKEN);
   const basicConfig: AxiosRequestConfig = {
     ...config,
     baseURL: BASE_URL,
@@ -17,7 +20,7 @@ function updateRequestConfig(config: AxiosRequestConfig): AxiosRequestConfig {
     },
   };
 
-  if (!authToken) return basicConfig;
+  if (!authToken || !auth) return basicConfig;
 
   return {
     ...basicConfig,
@@ -27,10 +30,11 @@ function updateRequestConfig(config: AxiosRequestConfig): AxiosRequestConfig {
   };
 }
 async function axiosWrapper<T>(
-  userConfig: AxiosRequestConfig
+  userConfig: AxiosRequestConfig,
+  auth?: boolean
 ): Promise<ResponseWithError<T>> {
   try {
-    const config = updateRequestConfig(userConfig);
+    const config = updateRequestConfig(userConfig, auth);
     return await axios(config);
   } catch (error) {
     return Promise.reject(error);

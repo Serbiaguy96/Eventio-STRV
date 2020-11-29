@@ -1,24 +1,24 @@
 import React from "react";
-import NotLoggedUserLayout from "../../layouts/NotLoggedUserLayout";
 import ErrorPageLayout from "../../layouts/ErrorPageLayout";
 import { useIntl } from "react-intl";
+import { useHistoryActions } from "../../../store/router/useActions";
+import { useLocation } from "react-router";
+import AsidePictureLayout from "../../layouts/AsidePictureLayout";
 
 const CommonErrorPage = () => {
   const { formatMessage } = useIntl();
-
-  const reloadPage = () => {
-    window.location.reload();
-  };
+  const { replace } = useHistoryActions();
+  const { pathname } = useLocation();
 
   return (
-    <NotLoggedUserLayout>
+    <AsidePictureLayout>
       <ErrorPageLayout
-        title={formatMessage({ id: "error.401" })}
-        description={formatMessage({ id: "error.401.description" })}
-        buttonString={formatMessage({ id: "sign_in.main" })}
-        buttonAction={reloadPage}
+        title={formatMessage({ id: "error.something" })}
+        description={formatMessage({ id: "error.description" })}
+        buttonString={formatMessage({ id: "common.refresh" })}
+        buttonAction={() => replace(pathname, { errorStatusCode: null })}
       />
-    </NotLoggedUserLayout>
+    </AsidePictureLayout>
   );
 };
 

@@ -21,6 +21,9 @@ export const en_messages = {
   "sign_up.last_name": "Last name",
   "sign_up.password_again": "Repeat password",
 
+  "account.log_out": "Log out",
+  "account.profile": "Profile",
+
   "error.something": "Something went wrong",
   "error.description":
     "Seems like Darth Vader just hits our website and drops it down.\nPlease press the refresh button and everything should be fine again.",
