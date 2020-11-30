@@ -10,6 +10,7 @@ import MainAppLayout from "../MainAppLayout/MainAppLayout";
 
 const PublicRoute: FC<AppLayoutProps> = ({
   path,
+  insideApp,
   component: Component,
   ...res
 }) => {
@@ -32,7 +33,7 @@ const PublicRoute: FC<AppLayoutProps> = ({
       {...res}
       path={path}
       render={(matchProps) => (
-        <MainAppLayout page404={!path}>
+        <MainAppLayout page404={!path} insideApp={insideApp}>
           {Component !== undefined && <Component {...matchProps} />}
         </MainAppLayout>
       )}

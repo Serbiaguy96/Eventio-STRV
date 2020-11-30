@@ -8,7 +8,6 @@ import {
   MORE_EVENTS,
   PAST_EVENTS,
 } from "./constants";
-import { is } from "immer/dist/utils/common";
 
 export type StateContainerProps = {
   allEvents: EventsById;
@@ -32,8 +31,8 @@ const cmpFunction = (a: EventType, b: EventType) => {
   const aDate = new Date(a.startsAt);
   const bDate = new Date(b.startsAt);
 
-  if (aDate.getTime() > bDate.getTime()) return -1;
-  if (aDate.getTime() < bDate.getTime()) return 1;
+  if (aDate.getTime() > bDate.getTime()) return 1;
+  if (aDate.getTime() < bDate.getTime()) return -1;
   return 0;
 };
 

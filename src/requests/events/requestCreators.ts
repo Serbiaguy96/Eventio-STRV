@@ -46,7 +46,7 @@ export const deleteEventById = (eventId: string) =>
   );
 
 export const attendEventById = (eventId: string) =>
-  axiosWrapper(
+  axiosWrapper<EventType>(
     {
       url: getEventAttendeeUrl(eventId),
       method: "POST",
@@ -55,7 +55,7 @@ export const attendEventById = (eventId: string) =>
   );
 
 export const unAttendEventById = (eventId: string) =>
-  axiosWrapper(
+  axiosWrapper<EventType>(
     {
       url: getEventAttendeeUrl(eventId),
       method: "DELETE",

@@ -2,10 +2,6 @@ import styled from "@emotion/styled";
 import { ArrowDropDown } from "@material-ui/icons";
 
 export const UserAccountContainer = styled.div`
-  position: fixed;
-  top: 30px;
-  right: 50px;
-
   display: flex;
   flex-direction: row;
   justify-content: flex-end;

@@ -13,4 +13,5 @@ export interface AppLayoutProps {
   render?: (matchProps: any) => ReactNode;
   exact?: boolean;
   path?: string;
+  insideApp?: boolean;
 }

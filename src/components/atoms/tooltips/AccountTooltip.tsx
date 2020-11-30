@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { useIntl } from "react-intl";
-import { ArrowIcon, CssTooltip, TooltipContent, TooltipItem } from "./styles";
+import { ArrowIcon, TooltipContent, TooltipItem } from "./styles";
+import CustomTooltip from "./CustomTooltip";
 
 export type AccountTooltipProps = {
   logOutAction: () => void;
@@ -11,28 +12,38 @@ const AccountTooltip = ({
   logOutAction,
   profileAction,
 }: AccountTooltipProps) => {
+  const [open, setOpen] = useState(false);
   const { formatMessage } = useIntl();
+
+  const wrapProfileActionClick = () => {
+    profileAction();
+    setOpen(false);
+  };
+
+  const wrapLogoutActionClick = () => {
+    logOutAction();
+    setOpen(false);
+  };
 
   const getTooltipContent = () => (
     <TooltipContent>
-      <TooltipItem onClick={profileAction}>
+      <TooltipItem onClick={wrapProfileActionClick}>
         {formatMessage({ id: "account.profile" })}
       </TooltipItem>
-      <TooltipItem onClick={logOutAction}>
+      <TooltipItem onClick={wrapLogoutActionClick}>
         {formatMessage({ id: "account.log_out" })}
       </TooltipItem>
     </TooltipContent>
   );
 
   return (
-    <CssTooltip
-      title={getTooltipContent()}
-      arrow
-      interactive
-      placement="bottom-end"
+    <CustomTooltip
+      content={getTooltipContent()}
+      onClose={() => setOpen(false)}
+      open={open}
     >
-      <ArrowIcon />
-    </CssTooltip>
+      <ArrowIcon onClick={() => setOpen(!open)} />
+    </CustomTooltip>
   );
 };
 

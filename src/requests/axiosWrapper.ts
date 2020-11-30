@@ -16,7 +16,7 @@ function updateRequestConfig(
     baseURL: BASE_URL,
     headers: {
       "Content-Type": "application/json",
-      APIKey: API_KEY,
+      apikey: API_KEY,
     },
   };
 
@@ -25,7 +25,8 @@ function updateRequestConfig(
   return {
     ...basicConfig,
     headers: {
-      Authorization: `Bearer${authToken}`,
+      ...basicConfig.headers,
+      Authorization: authToken,
     },
   };
 }

@@ -1,7 +1,13 @@
 export const cs_messages = {
   "common.app": "Eventio",
   "common.refresh": "Aktualizovat",
-  "sign_in.mandatory_field": "Toto pole je mandatorní! Nebo Mandalorní?",
+  "common.mandatory_field": "Toto pole je mandatorní! Nebo Mandalorní?",
+  "common.edit": "Upravit",
+  "common.join": "Přidat se",
+  "common.leave": "Opustit",
+  "common.of": "z",
+  "common.show": "zobrazit",
+  "common.close": "zavřít",
 
   "layout.han_solo_quote": '"Skvěle kluku. Aby ti to nevlezlo do hlavy',
   "layout.han_solo": "Han Solo",
@@ -23,6 +29,10 @@ export const cs_messages = {
 
   "account.log_out": "Odhlásit se",
   "account.profile": "Profil",
+
+  "dashboard.all_events": "všechny události",
+  "dashboard.future_events": "budoucí události",
+  "dashboard.past_events": "proběhlé události",
 
   "error.something": "Něco se stalo",
   "error.description":

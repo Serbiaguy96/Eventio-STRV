@@ -1,8 +1,10 @@
 import React from "react";
 import { Events } from "../../../store/events/types";
 import { EventsPerRowType, VisibleEventsType } from "./types";
-import Loader from "../../atoms/Loader";
-import { DashboardContainer } from "./styles";
+import { DashboardContainer, DashboardContentContainer } from "./styles";
+import DashboardHeader from "./components/DashboardHeader";
+import EventsList from "./components/EventsList";
+import { RoundButton } from "../../atoms/buttons";
 
 export type DashboardProps = {
   eventsList: Events;
@@ -21,10 +23,22 @@ const Dashboard = ({
   listStyle,
   visibleEvents,
 }: DashboardProps) => {
-  if (isLoading) return <Loader size={50} />;
   return (
     <DashboardContainer>
-      {eventsList.map((event) => event.title)}
+      <DashboardContentContainer>
+        <DashboardHeader
+          visibleEvents={visibleEvents}
+          listStyle={listStyle}
+          changeVisibleEvents={changeVisibleEvents}
+          changeListStyle={changeListStyle}
+        />
+        <EventsList
+          events={eventsList}
+          listStyle={listStyle}
+          isLoading={isLoading}
+        />
+      </DashboardContentContainer>
+      <RoundButton buttonType="create" />
     </DashboardContainer>
   );
 };

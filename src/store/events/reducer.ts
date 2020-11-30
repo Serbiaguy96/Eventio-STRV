@@ -1,6 +1,7 @@
 import { EventsActionsTypes, EventsById, EventsState } from "./types";
 import {
   DELETE_EVENT,
+  EVENT_IS_LOADING,
   RECEIVE_ALL_EVENTS,
   SET_EVENTS_LOADING,
   UPDATE_EVENT,
@@ -53,6 +54,17 @@ const eventsReducer = (
         ...state,
         isLoading: action.payload.flag,
       };
+    case EVENT_IS_LOADING: {
+      const { eventId, flag } = action.payload;
+      const upatedEvents = produce(state.events, (draft: EventsById) => {
+        draft[eventId].isLoading = flag;
+      });
+
+      return {
+        ...state,
+        events: upatedEvents,
+      };
+    }
     default:
       return state;
   }

@@ -1,6 +1,10 @@
 import { useDispatch } from "react-redux";
 import { useCallback, useEffect } from "react";
-import { fetchAllEventsThunk } from "./thunks";
+import {
+  attendEventThunk,
+  fetchAllEventsThunk,
+  unAttendEventThunk,
+} from "./thunks";
 import { useAllEvents, useAreEventsLoading } from "./useSelectors";
 
 export const useFetchAllEvents = () => {
@@ -23,5 +27,19 @@ export const useAllEventsData = () => {
     eventsData,
     isLoading,
     reloadData: fetchEvents,
+  };
+};
+
+export const useAttendeeActions = () => {
+  const dispatch = useDispatch();
+  return {
+    attend: useCallback(
+      (eventId: string) => dispatch(attendEventThunk(eventId)),
+      []
+    ),
+    unAttend: useCallback(
+      (eventId: string) => dispatch(unAttendEventThunk(eventId)),
+      []
+    ),
   };
 };

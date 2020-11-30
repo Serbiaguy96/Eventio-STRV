@@ -2,6 +2,12 @@ export const en_messages = {
   "common.app": "Eventio",
   "common.refresh": "Refresh",
   "common.mandatory_field": "This field is mandatory! Or Mandalorioany?",
+  "common.edit": "edit",
+  "common.leave": "leave",
+  "common.join": "join",
+  "common.of": "of",
+  "common.show": "show",
+  "common.close": "close",
 
   "layout.han_solo_quote": "“Great, kid. Don't get cocky.“",
   "layout.han_solo": "Han Solo",
@@ -23,6 +29,10 @@ export const en_messages = {
 
   "account.log_out": "Log out",
   "account.profile": "Profile",
+
+  "dashboard.all_events": "all events",
+  "dashboard.future_events": "future events",
+  "dashboard.past_events": "past events",
 
   "error.something": "Something went wrong",
   "error.description":

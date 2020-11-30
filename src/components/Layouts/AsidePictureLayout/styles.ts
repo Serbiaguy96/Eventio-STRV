@@ -1,20 +1,12 @@
 import styled from "@emotion/styled";
 import bgImage from "../../../assets/images/login-background.png";
 
-export const NotLoggedUserLayoutContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 export const AsideImageContainer = styled.div`
   position: absolute;
   width: 500px;
   height: 100vh;
   left: 0;
+  top: 0;
 
   display: flex;
   flex-direction: column;
@@ -86,6 +78,5 @@ export const LayoutContentContainer = styled.div`
   @media only screen and (max-width: 1024px) {
     margin-left: 0;
     width: 100%;
-    padding: 2rem;
   }
 `;

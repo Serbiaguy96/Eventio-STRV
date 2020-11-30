@@ -5,6 +5,8 @@ import { AccountTooltip } from "../../atoms/tooltips";
 import { useHistoryActions } from "../../../store/router/useActions";
 import ShorthandSignContainer from "../../atoms/ShorthandSignContainer";
 import useIsMobile from "../../../utils/useIsMobile";
+import { useLocation } from "react-router";
+import ClosePage from "../../atoms/ClosePage";
 
 export type UserNavigationProps = {
   userData: UserType | null;
@@ -13,8 +15,11 @@ export type UserNavigationProps = {
 
 const UserNavigation = ({ userData, logOutUser }: UserNavigationProps) => {
   const { push } = useHistoryActions();
+  const { pathname } = useLocation();
   const isMobile = useIsMobile();
   if (!userData) return <ShorthandSignContainer visible={!isMobile} />;
+
+  if (pathname === "/create-event") return <ClosePage />;
 
   const { firstName, lastName } = userData;
   return (

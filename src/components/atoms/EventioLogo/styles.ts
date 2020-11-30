@@ -6,9 +6,6 @@ export const LogoContainer = styled.div<{ logoTheme: LogoTheme }>`
   font-weight: bold;
   font-size: 3rem;
   letter-spacing: 4px;
-  position: fixed;
-  left: 40px;
-  top: 10px;
   z-index: 1000;
   cursor: pointer;
 

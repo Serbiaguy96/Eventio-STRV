@@ -5,16 +5,19 @@ import { useLogLoggedUser } from "../../../store/authentication/useActions";
 import jwtDecode from "jwt-decode";
 import { JwtTokenType } from "../../../store/middlewares/types";
 import { AppLayoutProps } from "../../../global/globalTypes";
-import { AUTH_TOKEN, REFRESH_TOKEN } from "../../../global/globalConstants";
+import { AUTH_TOKEN } from "../../../global/globalConstants";
 import MainAppLayout from "../MainAppLayout";
 
-const PrivateRoute: FC<AppLayoutProps> = ({ component: Component, ...res }) => {
+const PrivateRoute: FC<AppLayoutProps> = ({
+  component: Component,
+  insideApp,
+  ...res
+}) => {
   const { pathname } = useLocation();
   const isUserLogged = useIsUserLoggedIn();
   const logLoggedUser = useLogLoggedUser();
 
   const authToken = localStorage.getItem(AUTH_TOKEN);
-  const refreshToken = localStorage.getItem(REFRESH_TOKEN);
 
   if (!authToken && !isUserLogged) {
     return <Redirect to={{ pathname: "/signIn", state: { from: pathname } }} />;
@@ -29,7 +32,7 @@ const PrivateRoute: FC<AppLayoutProps> = ({ component: Component, ...res }) => {
     <Route
       {...res}
       render={(matchProps) => (
-        <MainAppLayout>
+        <MainAppLayout insideApp={insideApp}>
           {Component !== undefined && <Component {...matchProps} />}
         </MainAppLayout>
       )}

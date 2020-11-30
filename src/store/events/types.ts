@@ -1,6 +1,7 @@
 import { UserType } from "../authentication/types";
 import {
   DELETE_EVENT,
+  EVENT_IS_LOADING,
   RECEIVE_ALL_EVENTS,
   SET_EVENTS_LOADING,
   UPDATE_EVENT,
@@ -18,6 +19,7 @@ export interface EventType {
   _v: number;
   attendees: UserType[];
   id: string;
+  isLoading: boolean;
 }
 
 export type Events = EventType[];
@@ -51,8 +53,14 @@ export interface DeleteEventAction {
   payload: { eventId: string };
 }
 
+export interface SetEventIsLoadingAction {
+  type: typeof EVENT_IS_LOADING;
+  payload: { eventId: string; flag: boolean };
+}
+
 export type EventsActionsTypes =
   | ReceiveEventsAction
   | SetEventsLoadingAction
   | UpdateEventAction
-  | DeleteEventAction;
+  | DeleteEventAction
+  | SetEventIsLoadingAction;

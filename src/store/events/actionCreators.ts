@@ -3,10 +3,17 @@ import {
   Events,
   EventType,
   ReceiveEventsAction,
+  SetEventIsLoadingAction,
   SetEventsLoadingAction,
-  UpdateEventAction
+  UpdateEventAction,
 } from "./types";
-import {DELETE_EVENT, RECEIVE_ALL_EVENTS, SET_EVENTS_LOADING, UPDATE_EVENT} from "./actionTypes";
+import {
+  DELETE_EVENT,
+  EVENT_IS_LOADING,
+  RECEIVE_ALL_EVENTS,
+  SET_EVENTS_LOADING,
+  UPDATE_EVENT,
+} from "./actionTypes";
 
 export const receiveEvents = (eventsData: Events): ReceiveEventsAction => ({
   type: RECEIVE_ALL_EVENTS,
@@ -29,4 +36,12 @@ export const updateEvent = (
 ): UpdateEventAction => ({
   type: UPDATE_EVENT,
   payload: { eventData, eventId },
-}); 
+});
+
+export const setEventIsLoading = (
+  eventId: string,
+  flag: boolean
+): SetEventIsLoadingAction => ({
+  type: EVENT_IS_LOADING,
+  payload: { eventId, flag },
+});

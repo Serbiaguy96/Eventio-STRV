@@ -1,13 +1,19 @@
 import React, { FC } from "react";
-import { MainAppContainer } from "./styles";
+import { MainAppContainer, MainAppHeaderContainer } from "./styles";
 import EventioLogo from "../../atoms/EventioLogo";
 import UserNavigation from "../../molecules/UserNavigation";
 
-const MainAppLayout: FC<{ page404?: boolean }> = ({ children, page404 }) => {
+const MainAppLayout: FC<{ page404?: boolean; insideApp?: boolean }> = ({
+  children,
+  page404,
+  insideApp,
+}) => {
   return (
-    <MainAppContainer>
-      <EventioLogo page404={page404} />
-      <UserNavigation />
+    <MainAppContainer insideApp={insideApp}>
+      <MainAppHeaderContainer>
+        <EventioLogo page404={page404} />
+        <UserNavigation />
+      </MainAppHeaderContainer>
       {children}
     </MainAppContainer>
   );
