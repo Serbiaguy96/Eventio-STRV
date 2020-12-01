@@ -11,6 +11,7 @@ import { refreshTokenAuthentication } from "../../requests/authentication/reques
 import { getRouterPathname } from "../router/selectors";
 import { removeUserData } from "../authentication/actionCreators";
 import { AUTH_TOKEN, REFRESH_TOKEN } from "../../global/globalConstants";
+import { REMOVE_USER_DATA } from "../authentication/actionTypes";
 
 export const isAuthTokenExpired = (exp: number) => Date.now() > exp * 1000;
 
@@ -22,7 +23,12 @@ const tokenValidationMiddleware: MiddlewareType<RootState> = (store) => (
   const state = store.getState();
 
   // dont need to check token validity for router actions
-  if (action.type === LOCATION_CHANGE || action.type === CALL_HISTORY_METHOD)
+  // the last check is for case, that i need to remove user data due to expired token
+  if (
+    action.type === LOCATION_CHANGE ||
+    action.type === CALL_HISTORY_METHOD ||
+    action.type === REMOVE_USER_DATA
+  )
     return next(action);
 
   if (!authToken) return next(action);
