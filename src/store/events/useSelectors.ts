@@ -29,10 +29,8 @@ export const useAllEventsData = () => {
   const fetchEvents = useFetchAllEvents();
 
   useEffect(() => {
-    if (!Object.keys(eventsData).length) {
-      fetchEvents();
-    }
-  }, [eventsData]);
+    fetchEvents();
+  }, []);
 
   return {
     eventsData,
