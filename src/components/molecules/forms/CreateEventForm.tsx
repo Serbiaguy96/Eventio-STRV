@@ -9,8 +9,8 @@ import { SubmitButton } from "../../atoms/buttons";
 import { useIntl } from "react-intl";
 import { useForm } from "react-hook-form";
 import { CreateEventType } from "../../../requests/events/types";
-import { CreateEventPageProps } from "../../pages/CreateEventPage/CreateEventPage";
-import { addTimeToDate } from "../../pages/CreateEventPage/utils";
+import { CreateEventPageProps } from "../../Pages/CreateEventPage/CreateEventPage";
+import { addTimeToDate } from "../../Pages/CreateEventPage/utils";
 import { EventForm } from "./styles";
 
 export type CreateEventFormType = Omit<CreateEventType, "startsAt"> & {

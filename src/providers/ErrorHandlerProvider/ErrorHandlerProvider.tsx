@@ -1,8 +1,8 @@
 import React, { FC, Fragment } from "react";
 import { useLocation } from "react-router";
 import get from "lodash/fp/get";
-import Page401 from "../../components/pages/Page401";
-import CommonErrorPage from "../../components/pages/CommonErrorPage";
+import Page401 from "../../components/Pages/Page401";
+import CommonErrorPage from "../../components/Pages/CommonErrorPage";
 
 const ErrorHandlerProvider: FC = ({ children }) => {
   const { state } = useLocation();

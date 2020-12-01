@@ -1,8 +1,8 @@
 import React from "react";
 import { UserType } from "../../../store/authentication/types";
-import { EventsPerRowType } from "../../pages/Dashboard/types";
+import { EventsPerRowType } from "../../Pages/Dashboard/types";
 import { PersonIcon, TextStyle, UsersCapacityContainer } from "./styles";
-import { MORE_EVENTS } from "../../pages/Dashboard/constants";
+import { MORE_EVENTS } from "../../Pages/Dashboard/constants";
 import { useIntl } from "react-intl";
 
 export type UsersCapacityProps = {

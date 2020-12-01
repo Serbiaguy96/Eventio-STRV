@@ -13,8 +13,8 @@ import {
   FormHookTimeInput,
 } from "../../atoms/inputs";
 import { useIntl } from "react-intl";
-import { addTimeToDate } from "../../pages/CreateEventPage/utils";
-import { getDictOfChangedValues } from "../../pages/EditEventPage/utils";
+import { addTimeToDate } from "../../Pages/CreateEventPage/utils";
+import { getDictOfChangedValues } from "../../Pages/EditEventPage/utils";
 import { EditFormContainer } from "./styles";
 
 export type EditEventFormProps = {

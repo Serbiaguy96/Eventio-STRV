@@ -1,8 +1,8 @@
 import React from "react";
 import { EventType } from "../../../store/events/types";
 import { useHistory } from "react-router";
-import useEventActionData from "../../pages/Dashboard/components/EventsList/hooks/useEventActionData";
-import { EventsPerRowType } from "../../pages/Dashboard/types";
+import useEventActionData from "../../Pages/Dashboard/components/EventsList/hooks/useEventActionData";
+import { EventsPerRowType } from "../../Pages/Dashboard/types";
 import SingleEvent from "./SingleEvent";
 
 export type ReduxContainerProps = {

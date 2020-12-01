@@ -1,7 +1,7 @@
 import React from "react";
 import { EventType } from "../../../store/events/types";
 import { EventButtonActionTypes } from "./types";
-import { EventsPerRowType } from "../../pages/Dashboard/types";
+import { EventsPerRowType } from "../../Pages/Dashboard/types";
 import {
   DateFlexContainer,
   EventContainer,
@@ -11,7 +11,7 @@ import {
   CapacityFlexContainer,
   ButtonFlexContainer,
 } from "./styles";
-import { MORE_EVENTS } from "../../pages/Dashboard/constants";
+import { MORE_EVENTS } from "../../Pages/Dashboard/constants";
 import DateFormat from "../../atoms/DateFormat";
 import UsersCapacity from "../../atoms/UsersCapacity";
 import { EventActionButton } from "../../atoms/buttons";

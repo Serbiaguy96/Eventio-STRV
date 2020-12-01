@@ -1,5 +1,5 @@
 import React from "react";
-import { SignInPageProps } from "../../pages/SignInPage/SignInPage";
+import { SignInPageProps } from "../../Pages/SignInPage/SignInPage";
 import { FormHookPasswordInput, FormHookTextInput } from "../../atoms/inputs";
 import ShorthandSignContainer from "../../atoms/ShorthandSignContainer";
 import { SubmitButton } from "../../atoms/buttons";

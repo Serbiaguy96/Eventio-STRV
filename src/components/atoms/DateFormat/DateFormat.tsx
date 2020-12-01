@@ -1,9 +1,9 @@
 import React from "react";
-import { EventsPerRowType } from "../../pages/Dashboard/types";
+import { EventsPerRowType } from "../../Pages/Dashboard/types";
 import { useLocalizationString } from "../../../store/localization/useSelectors";
 import { DateContainer } from "./styles";
-import { MORE_EVENTS } from "../../pages/Dashboard/constants";
-import { getUtcDate } from "../../pages/CreateEventPage/utils";
+import { MORE_EVENTS } from "../../Pages/Dashboard/constants";
+import { getUtcDate } from "../../Pages/CreateEventPage/utils";
 
 export type DateFormatProps = {
   eventDate: string;

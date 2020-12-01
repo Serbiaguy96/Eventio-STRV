@@ -1,15 +1,15 @@
 import React, { Fragment } from "react";
 import { Switch } from "react-router";
-import SignInPage from "./components/pages/SignInPage";
-import Page404 from "./components/pages/Page404";
-import Dashboard from "./components/pages/Dashboard";
-import PublicRoute from "./components/layouts/PublicRoute";
-import PrivateRoute from "./components/layouts/PrivateRoute";
-import CreateEventPage from "./components/pages/CreateEventPage";
-import EventDetailPage from "./components/pages/EventDetailPage";
-import EditEventPage from "./components/pages/EditEventPage";
-import UserProfilePage from "./components/pages/UserProfilePage";
-import SignUpPage from "./components/pages/SignUpPage";
+import SignInPage from "./components/Pages/SignInPage";
+import Page404 from "./components/Pages/Page404";
+import Dashboard from "./components/Pages/Dashboard";
+import PublicRoute from "./components/Layouts/PublicRoute";
+import PrivateRoute from "./components/Layouts/PrivateRoute";
+import CreateEventPage from "./components/Pages/CreateEventPage";
+import EventDetailPage from "./components/Pages/EventDetailPage";
+import EditEventPage from "./components/Pages/EditEventPage";
+import UserProfilePage from "./components/Pages/UserProfilePage";
+import SignUpPage from "./components/Pages/SignUpPage";
 
 const App = () => {
   return (

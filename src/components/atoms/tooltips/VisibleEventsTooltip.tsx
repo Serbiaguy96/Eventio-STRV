@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { VisibleEventsType } from "../../pages/Dashboard/types";
+import { VisibleEventsType } from "../../Pages/Dashboard/types";
 import { useIntl } from "react-intl";
 import { ArrowDarkIcon, EventActionItem, TooltipContent } from "./styles";
 import {
   ALL_EVENTS,
   FUTURE_EVENTS,
   PAST_EVENTS,
-} from "../../pages/Dashboard/constants";
+} from "../../Pages/Dashboard/constants";
 import CustomTooltip from "./CustomTooltip";
 
 export type VisibleEventsTooltipProps = {
