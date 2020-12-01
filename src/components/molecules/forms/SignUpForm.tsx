@@ -1,5 +1,5 @@
 import React from "react";
-import { SignUpPageProps } from "../../pages/SignUpPage/SignUpPage";
+import { SignUpPageProps } from "../../Pages/SignUpPage/SignUpPage";
 import { useForm } from "react-hook-form";
 import { FormHookPasswordInput, FormHookTextInput } from "../../atoms/inputs";
 import { useIntl } from "react-intl";
