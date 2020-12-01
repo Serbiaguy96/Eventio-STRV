@@ -1,9 +1,9 @@
 import React from "react";
-import ErrorPageLayout from "../../layouts/ErrorPageLayout";
-import { useIntl } from "react-intl";
-import { useHistoryActions } from "../../../store/router/useActions";
 import { useLocation } from "react-router";
-import AsidePictureLayout from "../../layouts/AsidePictureLayout";
+import { useIntl } from "react-intl";
+import ErrorPageLayout from "../../Layouts/ErrorPageLayout";
+import { useHistoryActions } from "../../../store/router/useActions";
+import AsidePictureLayout from "../../Layouts/AsidePictureLayout";
 
 const CommonErrorPage = () => {
   const { formatMessage } = useIntl();

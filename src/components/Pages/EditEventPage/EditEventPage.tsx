@@ -2,7 +2,7 @@ import React from "react";
 import { EventType } from "../../../store/events/types";
 import { UserType } from "../../../store/authentication/types";
 import { UpdateEventType } from "../../../requests/events/types";
-import { MainAppContentContainer } from "../../layouts/MainAppLayout/styles";
+import { MainAppContentContainer } from "../../Layouts/MainAppLayout/styles";
 import { Fragment } from "react";
 import { RoundButton } from "../../atoms/buttons";
 import {

@@ -1,7 +1,7 @@
 import React from "react";
 import { useIntl } from "react-intl";
 import { UserPostDataType } from "../../../requests/users/types";
-import AsidePictureLayout from "../../layouts/AsidePictureLayout";
+import AsidePictureLayout from "../../Layouts/AsidePictureLayout";
 import {
   SignInFormContainer,
   SignInMessage,

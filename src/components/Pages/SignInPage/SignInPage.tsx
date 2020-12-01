@@ -2,7 +2,7 @@ import React from "react";
 import { useIntl } from "react-intl";
 import { SignInFormContainer, SignInMessage, SignInTitle } from "./styles";
 import { SignInFormType } from "../../../requests/authentication/types";
-import AsidePictureLayout from "../../layouts/AsidePictureLayout";
+import AsidePictureLayout from "../../Layouts/AsidePictureLayout";
 import SignInForm from "../../molecules/forms/SignInForm";
 
 export type SignInPageProps = {

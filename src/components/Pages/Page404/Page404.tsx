@@ -1,8 +1,8 @@
 import React from "react";
 import { useIntl } from "react-intl";
 import { useHistory } from "react-router";
-import ErrorPageLayout from "../../layouts/ErrorPageLayout";
-import AsidePictureLayout from "../../layouts/AsidePictureLayout";
+import ErrorPageLayout from "../../Layouts/ErrorPageLayout";
+import AsidePictureLayout from "../../Layouts/AsidePictureLayout";
 
 const Page404 = () => {
   const { formatMessage } = useIntl();

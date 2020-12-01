@@ -5,7 +5,7 @@ import DashboardHeader from "./components/DashboardHeader";
 import EventsList from "./components/EventsList";
 import { RoundButton } from "../../atoms/buttons";
 import { Fragment } from "react";
-import { MainAppContentContainer } from "../../layouts/MainAppLayout/styles";
+import { MainAppContentContainer } from "../../Layouts/MainAppLayout/styles";
 
 export type DashboardProps = {
   eventsList: Events;

@@ -1,12 +1,11 @@
 import React from "react";
 import { Fragment } from "react";
+import { useIntl } from "react-intl";
 import { EventType } from "../../../store/events/types";
 import Loader from "../../atoms/Loader";
-import { MainAppContentContainer } from "../../layouts/MainAppLayout/styles";
+import { MainAppContentContainer } from "../../Layouts/MainAppLayout/styles";
 import { RoundButton } from "../../atoms/buttons";
-import { useHistory } from "react-router";
 import { EventDetailContentContainer, EventDetailHeader } from "./styles";
-import { useIntl } from "react-intl";
 import SingleEvent from "../../molecules/SingleEvent";
 import { MORE_EVENTS } from "../Dashboard/constants";
 import EventAttendees from "../../molecules/EventAttendees";

@@ -1,8 +1,8 @@
 import React from "react";
 import { useIntl } from "react-intl";
-import ErrorPageLayout from "../../layouts/ErrorPageLayout";
+import ErrorPageLayout from "../../Layouts/ErrorPageLayout";
 import { useHistoryActions } from "../../../store/router/useActions";
-import AsidePictureLayout from "../../layouts/AsidePictureLayout";
+import AsidePictureLayout from "../../Layouts/AsidePictureLayout";
 import { useLogUserOut } from "../../../store/authentication/useActions";
 import { AUTH_TOKEN, REFRESH_TOKEN } from "../../../global/globalConstants";
 

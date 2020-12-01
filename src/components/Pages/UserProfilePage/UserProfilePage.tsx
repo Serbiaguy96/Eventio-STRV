@@ -3,7 +3,7 @@ import { useIntl } from "react-intl";
 import { Events } from "../../../store/events/types";
 import { EventsPerRowType } from "../Dashboard/types";
 import { UserType } from "../../../store/authentication/types";
-import { MainAppContentContainer } from "../../layouts/MainAppLayout/styles";
+import { MainAppContentContainer } from "../../Layouts/MainAppLayout/styles";
 import UserProfileHeader from "./UserProfileHeader";
 import { EventsTitle, UserEventsContainer } from "./styles";
 import { MORE_EVENTS } from "../Dashboard/constants";
