@@ -1,6 +1,6 @@
 import React from "react";
 import StateContainer from "./StateContainer";
-import { useAllEventsData } from "../../../store/events/useActions";
+import { useAllEventsData } from "../../../store/events/useSelectors";
 
 const ReduxContainer = () => {
   const { eventsData, isLoading, reloadData } = useAllEventsData();

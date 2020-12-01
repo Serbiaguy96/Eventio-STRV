@@ -3,18 +3,19 @@ import {
   DELETE_EVENT,
   EVENT_IS_LOADING,
   RECEIVE_ALL_EVENTS,
+  RECEIVE_EVENT,
   SET_EVENTS_LOADING,
   UPDATE_EVENT,
 } from "./actionTypes";
 
 export interface EventType {
   _id: string;
-  updatedAt: string;
-  createdAt: string;
   title: string;
   description: string;
   startsAt: string;
   capacity: number;
+  updatedAt: string;
+  createdAt: string;
   owner: UserType;
   _v: number;
   attendees: UserType[];
@@ -36,6 +37,11 @@ export interface EventsState {
 export interface ReceiveEventsAction {
   type: typeof RECEIVE_ALL_EVENTS;
   payload: { allEvents: Events };
+}
+
+export interface ReceiveEventAction {
+  type: typeof RECEIVE_EVENT;
+  payload: { event: EventType };
 }
 
 export interface SetEventsLoadingAction {
@@ -60,6 +66,7 @@ export interface SetEventIsLoadingAction {
 
 export type EventsActionsTypes =
   | ReceiveEventsAction
+  | ReceiveEventAction
   | SetEventsLoadingAction
   | UpdateEventAction
   | DeleteEventAction

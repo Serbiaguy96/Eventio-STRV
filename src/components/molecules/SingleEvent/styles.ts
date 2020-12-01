@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 type IsRow = {
   isRow: boolean;
+  isClickable?: boolean;
 };
 
 export const EventContainer = styled.div<IsRow>`
@@ -13,6 +14,7 @@ export const EventContainer = styled.div<IsRow>`
   justify-self: stretch;
   justify-items: start;
   align-items: center;
+  ${({ isClickable }) => isClickable && "cursor: pointer;"}
 
   ${({ isRow }) => {
     if (!isRow)

@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { MainAppContainer, MainAppHeaderContainer } from "./styles";
 import EventioLogo from "../../atoms/EventioLogo";
 import UserNavigation from "../../molecules/UserNavigation";
+import BackToPage from "../../atoms/BackToPage";
 
 const MainAppLayout: FC<{ page404?: boolean; insideApp?: boolean }> = ({
   children,
@@ -12,6 +13,7 @@ const MainAppLayout: FC<{ page404?: boolean; insideApp?: boolean }> = ({
     <MainAppContainer insideApp={insideApp}>
       <MainAppHeaderContainer>
         <EventioLogo page404={page404} />
+        <BackToPage />
         <UserNavigation />
       </MainAppHeaderContainer>
       {children}

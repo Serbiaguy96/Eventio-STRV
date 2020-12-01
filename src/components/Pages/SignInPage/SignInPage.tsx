@@ -47,6 +47,7 @@ const SignInPage = ({
         <SignInForm onSubmit={handleSubmit(submitHandler)}>
           <FormHookTextInput
             name="email"
+            label={formatMessage({ id: "sign_in.email" })}
             control={control}
             error={wrongCredentialsError || !!errors.email}
             required
@@ -54,6 +55,7 @@ const SignInPage = ({
           />
           <FormHookPasswordInput
             name="password"
+            label={formatMessage({ id: "sign_in.password" })}
             control={control}
             error={wrongCredentialsError || !!errors.password}
             required

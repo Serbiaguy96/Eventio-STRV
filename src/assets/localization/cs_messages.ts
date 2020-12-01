@@ -8,6 +8,7 @@ export const cs_messages = {
   "common.of": "z",
   "common.show": "zobrazit",
   "common.close": "zavřít",
+  "common.empty": "Zde není nic k vidění mladý padavane",
 
   "layout.han_solo_quote": '"Skvěle kluku. Aby ti to nevlezlo do hlavy',
   "layout.han_solo": "Han Solo",
@@ -26,15 +27,34 @@ export const cs_messages = {
   "sign_up.first_name": "Jméno",
   "sign_up.last_name": "Příjmení",
   "sign_up.password_again": "Heslo znovu",
+  "sign_up.error": "Oops! Uživatel s tímto emailem už existuje.",
+  "sign_up.no_match": "Hesla se neshodují",
+  "sign_up.wrong_email_format": "Špatný formát hesla (example@com.com)",
 
   "account.log_out": "Odhlásit se",
   "account.profile": "Profil",
+  "account.events": "Moje události",
+
+  "event.create": "vytvořit událost",
+  "event.details": "Zadejte údaje",
+  "event.details.title": "Název",
+  "event.details.description": "Popis",
+  "event.details.date": "Datum",
+  "event.details.time": "Čas",
+  "event.details.capacity": "Kapacita",
+
+  "event.detail.back": "Zpět na události",
+  "event.detail": "detail události",
+  "event.attendees": "Účastníci",
+  "event.no_attendees": "Bez účastníků :(",
+  "event.delete": "smazat událost",
 
   "dashboard.all_events": "všechny události",
   "dashboard.future_events": "budoucí události",
   "dashboard.past_events": "proběhlé události",
 
   "error.something": "Něco se stalo",
+  "error.capacity": "Chybná kapacita (min 1, max 50 účastníků)",
   "error.description":
     "Zdá se že Darth Vader právě zasáhnul naší stránku a shodil ji.\nZmáčkni prosím aktualizační tlačítko a vše by mělo být zase dobré.",
   "error.404": "404 Chyba - stránka nenalezena",

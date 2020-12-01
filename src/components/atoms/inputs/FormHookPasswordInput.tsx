@@ -4,27 +4,35 @@ import { FormHookInputTypes } from "./types";
 import EventioPasswordInput from "./EventioPasswordInput";
 import { useIntl } from "react-intl";
 
+type PasswordInputProps = FormHookInputTypes & {
+  customRules?: any;
+};
+
 const FormHookPasswordInput = ({
   name,
+  label,
   control,
   error,
   helperText,
   required,
-}: FormHookInputTypes) => {
+  customRules,
+}: PasswordInputProps) => {
   const { formatMessage } = useIntl();
+  const validCustomRules = customRules || {};
   return (
     <Controller
       name={name}
       control={control}
       render={(props) => (
         <EventioPasswordInput
-          label={formatMessage({ id: "sign_in.password" })}
+          label={label || formatMessage({ id: "sign_in.password" })}
           {...props}
           error={error}
           helperText={helperText}
         />
       )}
       rules={{
+        ...validCustomRules,
         required: required && formatMessage({ id: "common.mandatory_field" }),
       }}
     />

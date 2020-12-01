@@ -3,6 +3,7 @@ import { EventsPerRowType } from "../../pages/Dashboard/types";
 import { useLocalizationString } from "../../../store/localization/useSelectors";
 import { DateContainer } from "./styles";
 import { MORE_EVENTS } from "../../pages/Dashboard/constants";
+import { getUtcDate } from "../../pages/CreateEventPage/utils";
 
 export type DateFormatProps = {
   eventDate: string;
@@ -16,7 +17,7 @@ const languageDic = {
 
 const DateFormat = ({ eventDate, listType }: DateFormatProps) => {
   const locale = useLocalizationString();
-  const date = new Date(eventDate);
+  const date = getUtcDate(eventDate);
 
   const formatter = new Intl.DateTimeFormat(languageDic[locale], {
     month: "long",

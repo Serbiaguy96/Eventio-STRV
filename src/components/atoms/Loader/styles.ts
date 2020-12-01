@@ -4,6 +4,7 @@ import loader from "../../../assets/images/loader.png";
 
 export const LoaderContainer = styled.div`
   height: 100%;
+  width: 100%;
   text-align: center;
   display: flex;
   justify-content: center;

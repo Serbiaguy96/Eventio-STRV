@@ -9,7 +9,7 @@ export const EventsListContainer = styled.div<{ inRow: boolean }>`
         grid-auto-rows: 300px;
         gap: 17px;
         
-        @media only screen and (min-width: 160px) {
+        @media only screen and (min-width: 1600px) {
           grid-template-columns: 24fr 24fr 24fr 24fr;
         }
         

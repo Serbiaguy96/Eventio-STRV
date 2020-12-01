@@ -1,33 +1,41 @@
 import { useDispatch } from "react-redux";
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 import {
   attendEventThunk,
+  createNewEventThunk,
+  deleteEventByIdThunk,
   fetchAllEventsThunk,
+  fetchEventByIdThunk,
   unAttendEventThunk,
+  updateEventByIdThunk,
 } from "./thunks";
-import { useAllEvents, useAreEventsLoading } from "./useSelectors";
+import { CreateEventType, UpdateEventType } from "../../requests/events/types";
 
 export const useFetchAllEvents = () => {
   const dispatch = useDispatch();
   return useCallback(() => dispatch(fetchAllEventsThunk()), []);
 };
 
-export const useAllEventsData = () => {
-  const eventsData = useAllEvents();
-  const isLoading = useAreEventsLoading();
-  const fetchEvents = useFetchAllEvents();
+export const useFetchEventById = (eventId: string) => {
+  const dispatch = useDispatch();
+  return useCallback(() => dispatch(fetchEventByIdThunk(eventId)), [dispatch]);
+};
 
-  useEffect(() => {
-    if (!Object.keys(eventsData).length) {
-      fetchEvents();
-    }
-  }, []);
+export const useCreateNewEvent = () => {
+  const dispatch = useDispatch();
+  return useCallback(
+    (eventData: CreateEventType) => dispatch(createNewEventThunk(eventData)),
+    [dispatch]
+  );
+};
 
-  return {
-    eventsData,
-    isLoading,
-    reloadData: fetchEvents,
-  };
+export const useUpdateEventAction = (eventId: string) => {
+  const dispatch = useDispatch();
+  return useCallback(
+    (eventData: UpdateEventType) =>
+      dispatch(updateEventByIdThunk(eventId, eventData)),
+    [dispatch]
+  );
 };
 
 export const useAttendeeActions = () => {
@@ -42,4 +50,9 @@ export const useAttendeeActions = () => {
       []
     ),
   };
+};
+
+export const useDeleteEventAction = (eventId: string) => {
+  const dispatch = useDispatch();
+  return useCallback(() => dispatch(deleteEventByIdThunk(eventId)), [dispatch]);
 };

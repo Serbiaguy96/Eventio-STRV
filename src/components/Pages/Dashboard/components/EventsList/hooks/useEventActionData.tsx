@@ -2,8 +2,13 @@ import { useHistory } from "react-router";
 import { noop } from "lodash";
 import { EventType } from "../../../../../../store/events/types";
 import { useUserData } from "../../../../../../store/authentication/useSelectors";
-import { EDIT, JOIN, LEAVE, NONE } from "../SingleEvent/constants";
-import { EventButtonActionTypes } from "../SingleEvent/types";
+import {
+  EDIT,
+  JOIN,
+  LEAVE,
+  NONE,
+} from "../../../../../molecules/SingleEvent/constants";
+import { EventButtonActionTypes } from "../../../../../molecules/SingleEvent/types";
 import { useAttendeeActions } from "../../../../../../store/events/useActions";
 
 type EventActionHookType = {
@@ -18,7 +23,7 @@ export default (event: EventType): EventActionHookType => {
 
   const { id, attendees, owner } = event;
 
-  const editAction = () => push(`/edit/${id}`);
+  const editAction = () => push(`/edit-event/${id}`);
 
   const joinAction = () => attend(id);
   const leaveAction = () => unAttend(id);

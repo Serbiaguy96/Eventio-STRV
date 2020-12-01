@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useIntl } from "react-intl";
 import { ArrowIcon, TooltipContent, TooltipItem } from "./styles";
 import CustomTooltip from "./CustomTooltip";
+import { useHistory, useLocation } from "react-router";
 
 export type AccountTooltipProps = {
   logOutAction: () => void;
@@ -14,6 +15,8 @@ const AccountTooltip = ({
 }: AccountTooltipProps) => {
   const [open, setOpen] = useState(false);
   const { formatMessage } = useIntl();
+  const { push } = useHistory();
+  const { pathname } = useLocation();
 
   const wrapProfileActionClick = () => {
     profileAction();
@@ -25,10 +28,18 @@ const AccountTooltip = ({
     setOpen(false);
   };
 
+  const wrapCreateEventAction = () => {
+    push("/create-event", { from: pathname });
+    setOpen(false);
+  };
+
   const getTooltipContent = () => (
     <TooltipContent>
       <TooltipItem onClick={wrapProfileActionClick}>
         {formatMessage({ id: "account.profile" })}
+      </TooltipItem>
+      <TooltipItem onClick={wrapCreateEventAction}>
+        {formatMessage({ id: "event.create" })}
       </TooltipItem>
       <TooltipItem onClick={wrapLogoutActionClick}>
         {formatMessage({ id: "account.log_out" })}

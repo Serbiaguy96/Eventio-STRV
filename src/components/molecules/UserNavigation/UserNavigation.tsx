@@ -21,15 +21,18 @@ const UserNavigation = ({ userData, logOutUser }: UserNavigationProps) => {
 
   if (pathname === "/create-event") return <ClosePage />;
 
+  const moveToProfile = () => {
+    push("/profile");
+  };
+
   const { firstName, lastName } = userData;
   return (
     <UserAccountContainer>
-      <UserInitials>{`${firstName[0]}${lastName[0]}`}</UserInitials>
+      <UserInitials
+        onClick={moveToProfile}
+      >{`${firstName[0]}${lastName[0]}`}</UserInitials>
       <UserName>{`${firstName} ${lastName}`}</UserName>
-      <AccountTooltip
-        logOutAction={logOutUser}
-        profileAction={() => push("/profile")}
-      />
+      <AccountTooltip logOutAction={logOutUser} profileAction={moveToProfile} />
     </UserAccountContainer>
   );
 };

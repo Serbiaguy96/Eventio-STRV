@@ -5,8 +5,6 @@ export default () => {
   const [y, setY] = useState(window.innerHeight);
 
   const setDimensions = () => {
-    console.log(window.innerHeight);
-    console.log(window.innerWidth);
     setX(window.innerWidth);
     setY(window.innerHeight);
   };

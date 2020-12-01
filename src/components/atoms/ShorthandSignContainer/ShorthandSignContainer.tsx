@@ -12,7 +12,7 @@ const ShorthandSignContainer = ({ visible }: ShorthandSignContainerType) => {
   const { pathname } = useLocation();
   const { formatMessage } = useIntl();
 
-  if (!visible) return null;
+  if (!visible && pathname === "/signIn") return null;
 
   if (pathname === "/signIn") {
     return (
@@ -20,7 +20,7 @@ const ShorthandSignContainer = ({ visible }: ShorthandSignContainerType) => {
         <LighterGraySpan>
           {formatMessage({ id: "layout.no_account" })}
         </LighterGraySpan>
-        <LightGraySpan onClick={() => push("/signUp")}>
+        <LightGraySpan onClick={() => push("/signUp", { from: pathname })}>
           {formatMessage({ id: "sign_up.main" })}
         </LightGraySpan>
       </SignContainer>
@@ -32,7 +32,7 @@ const ShorthandSignContainer = ({ visible }: ShorthandSignContainerType) => {
       <LighterGraySpan>
         {formatMessage({ id: "layout.account" })}
       </LighterGraySpan>
-      <LightGraySpan onClick={() => push("/signIn")}>
+      <LightGraySpan onClick={() => push("/signIn", { from: pathname })}>
         {formatMessage({ id: "sign_in.main" })}
       </LightGraySpan>
     </SignContainer>

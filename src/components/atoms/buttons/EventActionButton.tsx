@@ -1,11 +1,7 @@
 import React from "react";
-import { EventButtonActionTypes } from "../../pages/Dashboard/components/EventsList/SingleEvent/types";
+import { EventButtonActionTypes } from "../../molecules/SingleEvent/types";
 import { EventStyledButton } from "./styles";
-import {
-  EDIT,
-  JOIN,
-  LEAVE,
-} from "../../pages/Dashboard/components/EventsList/SingleEvent/constants";
+import { EDIT, JOIN, LEAVE } from "../../molecules/SingleEvent/constants";
 import { useIntl } from "react-intl";
 import Loader from "../Loader";
 

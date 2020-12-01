@@ -1,10 +1,11 @@
 import React from "react";
 import { Events } from "../../../store/events/types";
 import { EventsPerRowType, VisibleEventsType } from "./types";
-import { DashboardContainer, DashboardContentContainer } from "./styles";
 import DashboardHeader from "./components/DashboardHeader";
 import EventsList from "./components/EventsList";
 import { RoundButton } from "../../atoms/buttons";
+import { Fragment } from "react";
+import { MainAppContentContainer } from "../../layouts/MainAppLayout/styles";
 
 export type DashboardProps = {
   eventsList: Events;
@@ -24,8 +25,8 @@ const Dashboard = ({
   visibleEvents,
 }: DashboardProps) => {
   return (
-    <DashboardContainer>
-      <DashboardContentContainer>
+    <Fragment>
+      <MainAppContentContainer>
         <DashboardHeader
           visibleEvents={visibleEvents}
           listStyle={listStyle}
@@ -37,9 +38,9 @@ const Dashboard = ({
           listStyle={listStyle}
           isLoading={isLoading}
         />
-      </DashboardContentContainer>
+      </MainAppContentContainer>
       <RoundButton buttonType="create" />
-    </DashboardContainer>
+    </Fragment>
   );
 };
 

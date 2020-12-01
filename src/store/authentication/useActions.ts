@@ -1,11 +1,10 @@
 import { useDispatch } from "react-redux";
 import { useCallback } from "react";
-import { logUserInThunk } from "./thunks";
+import { logUserInThunk, logUserOutThunk, postNewUserThunk } from "./thunks";
 import { UserType } from "./types";
-import { receiveUserData, removeUserData } from "./actionCreators";
+import { receiveUserData } from "./actionCreators";
 import { SignInFormType } from "../../requests/authentication/types";
-import { useHistory } from "react-router";
-import { AUTH_TOKEN, REFRESH_TOKEN } from "../../global/globalConstants";
+import { UserPostDataType } from "../../requests/users/types";
 
 export const useLogInUser = () => {
   const dispatch = useDispatch();
@@ -26,11 +25,13 @@ export const useLogLoggedUser = () => {
 
 export const useLogUserOut = () => {
   const dispatch = useDispatch();
-  const { push } = useHistory();
-  return useCallback(() => {
-    localStorage.removeItem(AUTH_TOKEN);
-    localStorage.removeItem(REFRESH_TOKEN);
-    dispatch(removeUserData());
-    push("/");
-  }, [dispatch]);
+  return useCallback(() => dispatch(logUserOutThunk()), [dispatch]);
+};
+
+export const usePostNewUser = () => {
+  const dispatch = useDispatch();
+  return useCallback(
+    (userData: UserPostDataType) => dispatch(postNewUserThunk(userData)),
+    [dispatch]
+  );
 };

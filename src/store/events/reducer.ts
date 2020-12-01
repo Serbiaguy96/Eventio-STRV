@@ -3,6 +3,7 @@ import {
   DELETE_EVENT,
   EVENT_IS_LOADING,
   RECEIVE_ALL_EVENTS,
+  RECEIVE_EVENT,
   SET_EVENTS_LOADING,
   UPDATE_EVENT,
 } from "./actionTypes";
@@ -22,11 +23,21 @@ const eventsReducer = (
       const newEvents: EventsById = {};
       const { allEvents } = action.payload;
       allEvents.forEach((event) => {
-        newEvents[event.id] = event;
+        newEvents[event.id] = { ...event, isLoading: false };
       });
       return {
         ...state,
         events: newEvents,
+      };
+    }
+    case RECEIVE_EVENT: {
+      const { event } = action.payload;
+      return {
+        ...state,
+        events: {
+          ...state.events,
+          [event.id]: { ...event, isLoading: false },
+        },
       };
     }
     case UPDATE_EVENT: {

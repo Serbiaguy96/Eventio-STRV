@@ -10,21 +10,27 @@ const FormHookTextInput = ({
   error,
   required,
   helperText,
+  label,
+  defaultValue,
+  customRules,
 }: FormHookInputTypes) => {
   const { formatMessage } = useIntl();
+  const validCustomRules = customRules || {};
   return (
     <Controller
       name={name}
       control={control}
       render={(props) => (
         <EventioTextInput
-          label={formatMessage({ id: "sign_in.email" })}
+          label={label}
           error={error}
+          defaultValue={defaultValue}
           helperText={helperText}
           {...props}
         />
       )}
       rules={{
+        ...validCustomRules,
         required: required && formatMessage({ id: "common.mandatory_field" }),
       }}
     />

@@ -11,10 +11,10 @@ export type EventioLogoProps = {
 
 const EventioLogo = ({ page404 }: EventioLogoProps) => {
   const { push } = useHistory();
-  const { pathname, state } = useLocation();
+  const { pathname, state } = useLocation<RouterStateType>();
 
   // this is little hack, to check if to shot light sign or dark sign
-  const errorCode = (state as RouterStateType)?.errorStatusCode;
+  const errorCode = state?.errorStatusCode;
   const lightThemeOnDesktop =
     pathname === "/signIn" || pathname === "/signUp" || errorCode || page404;
   return (

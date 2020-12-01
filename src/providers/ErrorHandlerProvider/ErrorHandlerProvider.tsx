@@ -11,7 +11,7 @@ const ErrorHandlerProvider: FC = ({ children }) => {
   if (errorStatusCode === 401) return <Page401 />;
 
   if (
-    errorStatusCode > 401 &&
+    errorStatusCode >= 400 &&
     errorStatusCode <= 510 &&
     errorStatusCode !== 404
   )

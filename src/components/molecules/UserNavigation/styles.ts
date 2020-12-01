@@ -19,6 +19,7 @@ export const UserInitials = styled.span`
   font-size: 16px;
   text-transform: uppercase;
   margin-right: 5px;
+  cursor: pointer;
 
   ${({ theme }) =>
     `color: ${theme.colors.lightGray}; background-color: ${theme.colors.lighterGray}`};

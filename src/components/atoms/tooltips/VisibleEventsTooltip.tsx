@@ -16,8 +16,8 @@ export type VisibleEventsTooltipProps = {
 const VisibleEventsTooltip = ({
   changeVisibleEvents,
 }: VisibleEventsTooltipProps) => {
-  const [open, toggleTooltip] = useState(false);
   const { formatMessage } = useIntl();
+  const [open, toggleTooltip] = useState(false);
 
   const wrapChangeEvents = (event: VisibleEventsType) => {
     changeVisibleEvents(event);

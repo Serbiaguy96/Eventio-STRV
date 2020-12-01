@@ -1,11 +1,6 @@
 import styled from "@emotion/styled";
-import {
-  EDIT,
-  JOIN,
-  LEAVE,
-  NONE,
-} from "../../pages/Dashboard/components/EventsList/SingleEvent/constants";
-import { EventButtonActionTypes } from "../../pages/Dashboard/components/EventsList/SingleEvent/types";
+import { EDIT, JOIN, LEAVE, NONE } from "../../molecules/SingleEvent/constants";
+import { EventButtonActionTypes } from "../../molecules/SingleEvent/types";
 
 export const StyledRoundButton = styled.button<{
   isCreate: boolean;
@@ -25,7 +20,7 @@ export const StyledRoundButton = styled.button<{
   justify-content: center;
   cursor: pointer;
 
-  margin: 10px 20px 10px auto;
+  ${({ visible }) => !visible && "display: none;"}
 
   &:hover {
     background-color: ${({ isCreate, theme }) =>
@@ -34,6 +29,11 @@ export const StyledRoundButton = styled.button<{
 
   &:focus {
     outline: none;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    position: static;
+    margin: 0 20px 15px auto;
   }
 `;
 
@@ -65,7 +65,11 @@ export const DefaultStyledButton = styled.button<{
   }
 
   @media only screen and (max-width: 1024px) {
-    margin-top: 40px;
+    margin-top: 20px;
+  }
+
+  &:focus {
+    outline: none;
   }
 `;
 

@@ -5,5 +5,8 @@ export interface FormHookInputTypes {
   control: Control;
   error: boolean;
   required: string | boolean;
+  label: string;
   helperText: string | undefined;
+  defaultValue?: any;
+  customRules?: any;
 }

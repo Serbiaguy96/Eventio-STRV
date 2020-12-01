@@ -30,11 +30,14 @@ export const createEvent = (eventData: CreateEventType) =>
   );
 
 export const updateEventById = (eventId: string, eventData: UpdateEventType) =>
-  axiosWrapper<EventType>({
-    url: getEventByIdUrl(eventId),
-    method: "PATCH",
-    data: { ...eventData },
-  });
+  axiosWrapper<EventType>(
+    {
+      url: getEventByIdUrl(eventId),
+      method: "PATCH",
+      data: { ...eventData },
+    },
+    true
+  );
 
 export const deleteEventById = (eventId: string) =>
   axiosWrapper(

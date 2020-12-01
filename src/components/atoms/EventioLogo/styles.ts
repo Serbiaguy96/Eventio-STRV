@@ -4,7 +4,7 @@ import { LogoTheme } from "./EventioLogo";
 export const LogoContainer = styled.div<{ logoTheme: LogoTheme }>`
   font-family: Hind;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 50px;
   letter-spacing: 4px;
   z-index: 1000;
   cursor: pointer;
@@ -16,5 +16,7 @@ export const LogoContainer = styled.div<{ logoTheme: LogoTheme }>`
     color: ${({ theme }) => theme.colors.darkGray};
     left: 24px;
     top: 29px;
+    font-size: 30px;
+    letter-spacing: 2px;
   }
 `;

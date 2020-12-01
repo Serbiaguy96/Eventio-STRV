@@ -1,8 +1,9 @@
-import { IconButton, withStyles } from "@material-ui/core";
+import { createMuiTheme, IconButton, withStyles } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import { APP_COLORS } from "../../../providers/ConnectedThemeProvider/ConnectedThemeProvider";
+import { DatePicker, TimePicker } from "@material-ui/pickers";
 
-export const CssTextField = withStyles({
+const EventionInputCss = {
   root: {
     width: "100%",
     margin: "10px 0",
@@ -41,7 +42,66 @@ export const CssTextField = withStyles({
       color: APP_COLORS.errorRed,
     },
   },
-})(TextField);
+};
+
+export const materialTheme = createMuiTheme({
+  overrides: {
+    MuiPickersToolbar: {
+      toolbar: {
+        backgroundColor: APP_COLORS.darkGray,
+      },
+    },
+    MuiPickersClockPointer: {
+      pointer: {
+        backgroundColor: APP_COLORS.lightGreen,
+      },
+      thumb: {
+        backgroundColor: APP_COLORS.lighterGray,
+        borderColor: APP_COLORS.lightGreen,
+      },
+    },
+    MuiPickersClock: {
+      pin: {
+        backgroundColor: APP_COLORS.lightGreen,
+      },
+    },
+    MuiPickersDay: {
+      day: {
+        color: APP_COLORS.darkGray,
+      },
+      daySelected: {
+        backgroundColor: APP_COLORS.lightGreen,
+      },
+      dayDisabled: {
+        color: APP_COLORS.lighterGray,
+      },
+      current: {
+        color: APP_COLORS.darkGray,
+      },
+    },
+    MuiPickersModal: {
+      dialogAction: {
+        color: APP_COLORS.darkGray,
+      },
+    },
+    MuiTouchRipple: {
+      root: {
+        color: `${APP_COLORS.darkGray}`,
+      },
+    },
+    MuiButton: {
+      textPrimary: {
+        color: `${APP_COLORS.darkGray}`,
+      },
+    },
+  },
+});
+
+export const CssDateField = withStyles(EventionInputCss)(DatePicker);
+
+export const CssTextField = withStyles(EventionInputCss)(TextField);
+
+export const CssTimeField = withStyles(EventionInputCss)(TimePicker);
 
 export const CssIconButton = withStyles({
   root: {

@@ -1,7 +1,7 @@
 import React from "react";
-import { EventType } from "../../../../../../store/events/types";
+import { EventType } from "../../../store/events/types";
 import { EventButtonActionTypes } from "./types";
-import { EventsPerRowType } from "../../../types";
+import { EventsPerRowType } from "../../pages/Dashboard/types";
 import {
   DateFlexContainer,
   EventContainer,
@@ -11,10 +11,10 @@ import {
   CapacityFlexContainer,
   ButtonFlexContainer,
 } from "./styles";
-import { MORE_EVENTS } from "../../../constants";
-import DateFormat from "../../../../../atoms/DateFormat";
-import UsersCapacity from "../../../../../atoms/UsersCapacity";
-import { EventActionButton } from "../../../../../atoms/buttons";
+import { MORE_EVENTS } from "../../pages/Dashboard/constants";
+import DateFormat from "../../atoms/DateFormat";
+import UsersCapacity from "../../atoms/UsersCapacity";
+import { EventActionButton } from "../../atoms/buttons";
 
 export type SingleEventProps = {
   event: EventType;
@@ -23,6 +23,7 @@ export type SingleEventProps = {
   buttonType: EventButtonActionTypes;
   buttonAction: () => void;
   listStyle: EventsPerRowType;
+  isClickable?: boolean;
 };
 
 const SingleEvent = ({
@@ -44,7 +45,7 @@ const SingleEvent = ({
   } = event;
   const isRow = listStyle === MORE_EVENTS;
   return (
-    <EventContainer isRow={isRow} key={key}>
+    <EventContainer isRow={isRow} key={key} onClick={onEventClick} isClickable>
       <DateFlexContainer isRow={isRow}>
         <DateFormat eventDate={startsAt} listType={listStyle} />
       </DateFlexContainer>
