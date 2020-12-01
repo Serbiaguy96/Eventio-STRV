@@ -4,9 +4,8 @@ import {
   CreateEventType,
   UpdateEventType,
 } from "../../../requests/events/types";
-import { EditFormContainer } from "./styles";
 import { useForm } from "react-hook-form";
-import { CreateEventFormType } from "../CreateEventPage/CreateEventForm";
+import { CreateEventFormType } from "./CreateEventForm";
 import {
   FormHookDateInput,
   FormHookNumberInput,
@@ -14,8 +13,9 @@ import {
   FormHookTimeInput,
 } from "../../atoms/inputs";
 import { useIntl } from "react-intl";
-import { addTimeToDate } from "../CreateEventPage/utils";
-import { getDictOfChangedValues } from "./utils";
+import { addTimeToDate } from "../../pages/CreateEventPage/utils";
+import { getDictOfChangedValues } from "../../pages/EditEventPage/utils";
+import { EditFormContainer } from "./styles";
 
 export type EditEventFormProps = {
   eventData: EventType;

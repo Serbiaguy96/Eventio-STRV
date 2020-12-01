@@ -7,7 +7,6 @@ export const StyledAction = styled.span<ActiveType>`
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
-  line-height: 24px;
   cursor: pointer;
   letter-spacing: 1px;
   text-transform: uppercase;

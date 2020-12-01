@@ -32,14 +32,3 @@ export const SignInMessage = styled.span<{ error: boolean }>`
   color: ${({ theme, error }) =>
     error ? theme.colors.errorRed : theme.colors.lightGray};
 `;
-
-export const SignInForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: flex-start;
-
-  @media only screen and (max-width: 1024px) {
-    align-items: center;
-  }
-`;

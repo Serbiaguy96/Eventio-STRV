@@ -12,7 +12,8 @@ const ShorthandSignContainer = ({ visible }: ShorthandSignContainerType) => {
   const { pathname } = useLocation();
   const { formatMessage } = useIntl();
 
-  if (!visible && pathname === "/signIn") return null;
+  if (!visible && (pathname === "/signIn" || pathname === "/signUp"))
+    return null;
 
   if (pathname === "/signIn") {
     return (

@@ -31,13 +31,6 @@ export const MainAppHeaderContainer = styled.div`
   padding: 10px 30px 0 30px;
 
   @media only screen and (max-width: 1024px) {
-    padding: 10px 10px 0 15px;
+    padding: 10px 20px 0 20px;
   }
-`;
-
-export const MainAppFooterContainer = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  background: transparent;
-  padding: 0 30px 10px 30px;
 `;

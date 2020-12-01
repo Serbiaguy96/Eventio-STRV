@@ -13,7 +13,7 @@ import {
 import { useIntl } from "react-intl";
 import Loader from "../../atoms/Loader";
 import DeleteEvent from "../../atoms/DeleteEvent";
-import EditEventForm from "./EditEventForm";
+import EditEventForm from "../../molecules/forms/EditEventForm";
 import EventAttendees from "../../molecules/EventAttendees";
 
 export type EditEventPageProps = {

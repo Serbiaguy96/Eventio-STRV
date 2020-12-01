@@ -10,7 +10,7 @@ export const cs_messages = {
   "common.close": "zavřít",
   "common.empty": "Zde není nic k vidění mladý padavane",
 
-  "layout.han_solo_quote": '"Skvěle kluku. Aby ti to nevlezlo do hlavy',
+  "layout.han_solo_quote": "“Skvěle kluku. Aby ti to nevlezlo do hlavy“",
   "layout.han_solo": "Han Solo",
   "layout.no_account": "Nemáš účet?",
   "layout.account": "Už máš účet?",
@@ -35,7 +35,7 @@ export const cs_messages = {
   "account.profile": "Profil",
   "account.events": "Moje události",
 
-  "event.create": "vytvořit událost",
+  "event.create": "Vytvořit událost",
   "event.details": "Zadejte údaje",
   "event.details.title": "Název",
   "event.details.description": "Popis",

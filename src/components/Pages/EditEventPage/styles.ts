@@ -46,14 +46,3 @@ export const EventEditContentContainer = styled.div`
     grid-template-areas: "form";
   }
 `;
-
-export const EditFormContainer = styled.form`
-  background: #ffffff;
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.108696);
-  border-radius: 2px;
-  padding: 30px 30px 40px 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  grid-area: form;
-`;

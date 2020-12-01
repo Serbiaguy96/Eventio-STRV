@@ -3,6 +3,7 @@ import { useIntl } from "react-intl";
 import { ArrowIcon, TooltipContent, TooltipItem } from "./styles";
 import CustomTooltip from "./CustomTooltip";
 import { useHistory, useLocation } from "react-router";
+import LocalizationSelector from "../../molecules/LocalizationSelector";
 
 export type AccountTooltipProps = {
   logOutAction: () => void;
@@ -43,6 +44,9 @@ const AccountTooltip = ({
       </TooltipItem>
       <TooltipItem onClick={wrapLogoutActionClick}>
         {formatMessage({ id: "account.log_out" })}
+      </TooltipItem>
+      <TooltipItem>
+        <LocalizationSelector />
       </TooltipItem>
     </TooltipContent>
   );

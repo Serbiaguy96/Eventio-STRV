@@ -1,11 +1,12 @@
 import React, { FC, useEffect } from "react";
+import { IntlProvider } from "react-intl";
 import { useLocalizationString } from "../../store/localization/useSelectors";
 import { useSetLocale } from "../../store/localization/useActions";
 import { Locale } from "../../store/localization/types";
 import { StringIndexedDictionary } from "../../global/globalTypes";
 import { cs_messages } from "../../assets/localization/cs_messages";
 import { en_messages } from "../../assets/localization/en_messages";
-import { IntlProvider } from "react-intl";
+import { LOCALE } from "../../global/globalConstants";
 
 type LocaleObjectType = {
   [key: string]: StringIndexedDictionary<string>;
@@ -22,7 +23,7 @@ const ConnectedIntlProvider: FC = ({ children }) => {
 
   useEffect(() => {
     // checking if language was changed before user left app
-    const storedLocale = localStorage.getItem("locale");
+    const storedLocale = localStorage.getItem(LOCALE);
 
     if (storedLocale && storedLocale !== locale) {
       setLocale(storedLocale as Locale);

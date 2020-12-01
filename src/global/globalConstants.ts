@@ -3,3 +3,4 @@ export const BASE_URL = "https://testproject-api-v2.strv.com/";
 
 export const AUTH_TOKEN = "authToken";
 export const REFRESH_TOKEN = "refreshToken";
+export const LOCALE = "locale";

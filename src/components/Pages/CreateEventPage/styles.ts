@@ -5,10 +5,10 @@ export const CreateEventPageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 140px;
 
   @media only screen and (max-width: 1024px) {
-    margin-top: 30px;
+    margin-top: 80px;
   }
 `;
 
@@ -52,15 +52,4 @@ export const CreateEventDescription = styled.span`
   font-size: 18px;
   line-height: 24px;
   color: ${({ theme }) => theme.colors.lightGray};
-`;
-
-export const EventForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: calc(100% - 64px);
-
-  @media only screen and (max-width: 1024px) {
-    width: calc(100% - 30px);
-  }
 `;

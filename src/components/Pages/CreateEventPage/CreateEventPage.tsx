@@ -8,7 +8,7 @@ import {
   CreateEventPageContainer,
 } from "./styles";
 import { CreateEventType } from "../../../requests/events/types";
-import CreateEventForm from "./CreateEventForm";
+import CreateEventForm from "../../molecules/forms/CreateEventForm";
 
 export type CreateEventPageProps = {
   createNewEvent: (newEvent: CreateEventType) => void;

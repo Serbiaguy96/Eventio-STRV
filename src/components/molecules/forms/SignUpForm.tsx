@@ -1,10 +1,12 @@
 import React from "react";
-import { SignUpPageProps } from "./SignUpPage";
-import { SignInForm } from "../SignInPage/styles";
+import { SignUpPageProps } from "../../pages/SignUpPage/SignUpPage";
 import { useForm } from "react-hook-form";
 import { FormHookPasswordInput, FormHookTextInput } from "../../atoms/inputs";
 import { useIntl } from "react-intl";
 import { SubmitButton } from "../../atoms/buttons";
+import { DefaultFormContainer } from "./styles";
+import ShorthandSignContainer from "../../atoms/ShorthandSignContainer";
+import useIsMobile from "../../../utils/useIsMobile";
 
 export type SignUpFormProps = SignUpPageProps;
 
@@ -23,6 +25,7 @@ const SignUpForm = ({
 }: SignUpFormProps) => {
   const { formatMessage } = useIntl();
   const { handleSubmit, errors, control, watch } = useForm<SignUpFormType>();
+  const isMobile = useIsMobile();
 
   const onSubmitHandle = (data: SignUpFormType) => {
     if (!Object.keys(errors).length) {
@@ -34,7 +37,10 @@ const SignUpForm = ({
   const passwordToCmp = watch("password");
 
   return (
-    <SignInForm onSubmit={handleSubmit(onSubmitHandle)} autoComplete="off">
+    <DefaultFormContainer
+      onSubmit={handleSubmit(onSubmitHandle)}
+      autoComplete="off"
+    >
       <FormHookTextInput
         name="firstName"
         label={formatMessage({ id: "sign_up.first_name" })}
@@ -86,11 +92,12 @@ const SignUpForm = ({
         }}
         helperText={errors.passwordAgain?.message}
       />
+      <ShorthandSignContainer visible={isMobile} />
       <SubmitButton
         label={formatMessage({ id: "sign_up.main" })}
         loading={isLoading}
       />
-    </SignInForm>
+    </DefaultFormContainer>
   );
 };
 

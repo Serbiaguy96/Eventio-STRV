@@ -1,4 +1,5 @@
 import React from "react";
+import { useIntl } from "react-intl";
 import { UserPostDataType } from "../../../requests/users/types";
 import AsidePictureLayout from "../../layouts/AsidePictureLayout";
 import {
@@ -6,8 +7,7 @@ import {
   SignInMessage,
   SignInTitle,
 } from "../SignInPage/styles";
-import { useIntl } from "react-intl";
-import SignUpForm from "./SignUpForm";
+import SignUpForm from "../../molecules/forms/SignUpForm";
 
 export type SignUpPageProps = {
   registerUser: (userData: UserPostDataType) => void;

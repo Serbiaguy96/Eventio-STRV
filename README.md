@@ -1,46 +1,89 @@
-# Getting Started with Create React App
+# Welcome to Eventio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Eventio is flexible web responsive app to help you maintance your events
 
-## Available Scripts
+## How to start app for development
 
-In the project directory, you can run:
+I used yarn package manager for managing packages but you can use npm as well.
 
-### `yarn start`
+// install dependencies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> `yarn`
+>or
+> `npm install`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+// start project
 
-### `yarn test`
+> `yarn start` or `npm start`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Todo list for Anna and basic intro to project structure
 
-### `yarn build`
+Hello Anna, i hope you are well. I've done all the given tasks, so i didn't leave you much job to do.</br>
+But in case you would like to implement some new features, here is what we have and how i structured the code.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I did pages like SignUp, SignIn, Dashboard, Event detail, Create event page, User profile and i did pages for three types
+of errors like 404 Page not found, 401 page for unauthorized actions and common error page. I haven't left much 
+comments inside the code because i tried to keep code clean and self commented.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I used following project structure where src is my root directory
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- src
+    - assets
+    - components
+        - atoms
+        - layouts
+        - molecules
+        - pages
+    - config
+    - global
+    - providers
+    - requests
+    - store
+    - typings
+    - utils
 
-### `yarn eject`
+#### assets
+    Here i placed all the stuff like images, fonts or localization strings
+ 
+#### components
+    In this directory is 80% of whole code. I ordered components by the their size and reusability. So the smallest components
+    are in the atoms directory and so on. For code reusability i used layouts to make things easy and simple. And of course
+    each page has its own component.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### config 
+    This directory is for app configurations, i configured axios for example.
+    
+#### providers
+    Directory for components which i used for main app wrapping (Theme provider, localization provider,
+    error boundary provider)
+    
+#### requests
+    All the requests are inside this directory. I am using axios for api calls.
+    
+#### store
+    Here is store configuration and actions for each part of store. I am using redux store with some middlewares.
+    Middlewares which i am using are redux thunk middleware for async calls to store, connected router middleware
+    so i can call routing actions inside thunk and i made one custom middleware for authentication token validaty checking.
+    Because all the requests to api are called inside redux thunks i made this middleware to check token before
+    each request.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### typings
+    Some declarration of custom types 
+    
+#### utils
+    For some common hooks, for example i made hook to chek viewport of the screen.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+I added localization to app so if you are going to implement some new features pleas use the localization
+and place the strings in /assets/localization file for each language. 
+For styling i used styled components from @emotion/styled package. I tried to implemented creating styles
+whith pragmaa like /** @jsx **/ to provide css prop to each element but with no luck. So that is maybe the thing
+you could do.
 
-## Learn More
+Thats everything from me and if you will have some questions hit me up, i'll be on the line all the time.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+See ya after my vacation.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Luka Lukasevic
+
+
