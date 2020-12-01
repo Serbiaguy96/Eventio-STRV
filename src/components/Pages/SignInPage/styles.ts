@@ -19,6 +19,11 @@ export const SignInTitle = styled.span`
   font-size: 28px;
   line-height: 48px;
   color: ${({ theme }) => theme.colors.darkGray};
+  text-align: center;
+
+  @media only screen and (max-width: 1024px) {
+    line-height: 30px;
+  }
 `;
 
 export const SignInMessage = styled.span<{ error: boolean }>`
@@ -31,4 +36,8 @@ export const SignInMessage = styled.span<{ error: boolean }>`
 
   color: ${({ theme, error }) =>
     error ? theme.colors.errorRed : theme.colors.lightGray};
+
+  @media only screen and (max-width: 1024px) {
+    margin-bottom: 0px;
+  }
 `;
