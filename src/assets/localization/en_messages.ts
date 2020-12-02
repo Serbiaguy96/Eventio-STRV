@@ -3,6 +3,7 @@ export const en_messages = {
   "common.refresh": "Refresh",
   "common.mandatory_field": "This field is mandatory! Or Mandaloriany?",
   "common.edit": "edit",
+  "common.full": "full",
   "common.leave": "leave",
   "common.join": "join",
   "common.of": "of",

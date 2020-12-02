@@ -1,5 +1,11 @@
 import styled from "@emotion/styled";
-import { EDIT, JOIN, LEAVE, NONE } from "../../molecules/SingleEvent/constants";
+import {
+  EDIT,
+  FULL,
+  JOIN,
+  LEAVE,
+  NONE,
+} from "../../molecules/SingleEvent/constants";
 import { EventButtonActionTypes } from "../../molecules/SingleEvent/types";
 
 export const StyledRoundButton = styled.button<{
@@ -85,7 +91,8 @@ export const EventStyledButton = styled.button<{
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 1px;
-  cursor: pointer;
+  cursor: ${({ actionType }) =>
+    actionType === FULL ? "context-menu" : "pointer"};
   border: none;
   text-transform: uppercase;
   border-radius: 4px;
@@ -102,6 +109,8 @@ export const EventStyledButton = styled.button<{
         return theme.colors.errorRed;
       case EDIT:
         return theme.colors.lighterGray;
+      case FULL:
+        return theme.colors.darkGray;
       default:
         return "";
     }

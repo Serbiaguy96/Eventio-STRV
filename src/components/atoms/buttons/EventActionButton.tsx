@@ -1,7 +1,7 @@
 import React from "react";
 import { EventButtonActionTypes } from "../../molecules/SingleEvent/types";
 import { EventStyledButton } from "./styles";
-import { EDIT, JOIN, LEAVE } from "../../molecules/SingleEvent/constants";
+import { EDIT, FULL, JOIN, LEAVE } from "../../molecules/SingleEvent/constants";
 import { useIntl } from "react-intl";
 import Loader from "../Loader";
 
@@ -31,13 +31,19 @@ const EventActionButton = ({
         return formatMessage({ id: "common.leave" });
       case EDIT:
         return formatMessage({ id: "common.edit" });
+      case FULL:
+        return formatMessage({ id: "common.full" });
       default:
         return "";
     }
   };
 
   return (
-    <EventStyledButton actionType={buttonType} onClick={onUserClick}>
+    <EventStyledButton
+      actionType={buttonType}
+      onClick={onUserClick}
+      disabled={buttonType === FULL}
+    >
       {isLoading ? <Loader size={25} /> : getLabelText()}
     </EventStyledButton>
   );

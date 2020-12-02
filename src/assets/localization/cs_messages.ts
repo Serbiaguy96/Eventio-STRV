@@ -3,6 +3,7 @@ export const cs_messages = {
   "common.refresh": "Aktualizovat",
   "common.mandatory_field": "Toto pole je mandatorní! Nebo Mandalorní?",
   "common.edit": "Upravit",
+  "common.full": "Plný",
   "common.join": "Přidat se",
   "common.leave": "Opustit",
   "common.of": "z",

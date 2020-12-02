@@ -4,6 +4,7 @@ import { EventType } from "../../../../../../store/events/types";
 import { useUserData } from "../../../../../../store/authentication/useSelectors";
 import {
   EDIT,
+  FULL,
   JOIN,
   LEAVE,
   NONE,
@@ -50,6 +51,12 @@ const useEventActionData = (event: EventType): EventActionHookType => {
     return {
       buttonType: LEAVE,
       buttonAction: leaveAction,
+    };
+
+  if (event.attendees.length === event.capacity)
+    return {
+      buttonType: FULL,
+      buttonAction: noop,
     };
 
   return {
