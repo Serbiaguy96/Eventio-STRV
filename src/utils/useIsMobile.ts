@@ -1,6 +1,8 @@
 import useViewPortDimension from "./useViewPortDimension";
 
-export default () => {
+const isMobile = () => {
   const { x } = useViewPortDimension();
   return x <= 1024;
 };
+
+export default isMobile;

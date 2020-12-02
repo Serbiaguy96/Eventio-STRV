@@ -1,4 +1,4 @@
-import { push, replace } from "connected-react-router";
+import { replace } from "connected-react-router";
 import { EventioThunk } from "../types";
 import { getAreEventsLoading } from "./selectors";
 import {
@@ -42,7 +42,7 @@ export const fetchAllEventsThunk = (): EventioThunk => (dispatch, getState) => {
 
 export const createNewEventThunk = (
   newEventData: CreateEventType
-): EventioThunk => (dispatch, getState) => {
+): EventioThunk => (dispatch) => {
   dispatch(setEventsLoading(true));
   createEvent(newEventData)
     .then(({ data }) => {
@@ -56,8 +56,7 @@ export const createNewEventThunk = (
 };
 
 export const fetchEventByIdThunk = (eventId: string): EventioThunk => (
-  dispatch,
-  getState
+  dispatch
 ) => {
   dispatch(setEventsLoading(true));
   fetchEventById(eventId)
@@ -128,13 +127,11 @@ export const deleteEventByIdThunk = (eventId: string): EventioThunk => (
 ) => {
   const state = getState();
   deleteEventById(eventId)
-    .then((data) => {
-      debugger;
+    .then(() => {
       dispatch(deleteEvent(eventId));
       dispatch(replace("/", {}));
     })
     .catch(({ response }) => {
-      debugger;
       const pathname = getRouterPathname(state);
       dispatch(replace(pathname, { errorStatusCode: response.status }));
     });

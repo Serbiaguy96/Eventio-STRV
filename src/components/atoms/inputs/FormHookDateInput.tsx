@@ -1,7 +1,7 @@
 import React from "react";
 import { Controller } from "react-hook-form";
 import { useIntl } from "react-intl";
-import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
+import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import { ThemeProvider } from "@material-ui/styles";
 import DateFnsUtils from "@date-io/date-fns";
 import { FormHookInputTypes } from "./types";
@@ -18,7 +18,6 @@ const FormHookDateInput = ({
   required,
   helperText,
   label,
-  defaultValue,
   value,
 }: DateInputProps) => {
   const { formatMessage } = useIntl();

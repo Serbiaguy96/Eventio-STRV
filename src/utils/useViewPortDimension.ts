@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default () => {
+const useViewPortDimensions = () => {
   const [x, setX] = useState(window.innerWidth);
   const [y, setY] = useState(window.innerHeight);
 
@@ -18,3 +18,5 @@ export default () => {
 
   return { x, y };
 };
+
+export default useViewPortDimensions;

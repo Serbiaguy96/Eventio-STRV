@@ -16,7 +16,7 @@ type EventActionHookType = {
   buttonAction: () => void;
 };
 
-export default (event: EventType): EventActionHookType => {
+const useEventActionData = (event: EventType): EventActionHookType => {
   const userData = useUserData();
   const { push } = useHistory();
   const { attend, unAttend } = useAttendeeActions();
@@ -57,3 +57,5 @@ export default (event: EventType): EventActionHookType => {
     buttonAction: joinAction,
   };
 };
+
+export default useEventActionData;

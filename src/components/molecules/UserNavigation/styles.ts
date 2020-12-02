@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { ArrowDropDown } from "@material-ui/icons";
 
 export const UserAccountContainer = styled.div`
   display: flex;

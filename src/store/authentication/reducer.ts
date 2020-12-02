@@ -1,8 +1,4 @@
-import {
-  AuthenticationActionTypes,
-  AuthenticationState,
-  UserType,
-} from "./types";
+import { AuthenticationActionTypes, AuthenticationState } from "./types";
 import {
   RECEIVE_REQUEST_ERROR,
   RECEIVE_USER_DATA,

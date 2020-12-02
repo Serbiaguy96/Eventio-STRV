@@ -1,7 +1,7 @@
 import React from "react";
 import { Controller } from "react-hook-form";
 import { useIntl } from "react-intl";
-import { MuiPickersUtilsProvider, TimePicker } from "@material-ui/pickers";
+import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
 import { FormHookInputTypes } from "./types";
 import { CssTimeField, materialTheme } from "./styles";

@@ -28,7 +28,7 @@ const ConnectedIntlProvider: FC = ({ children }) => {
     if (storedLocale && storedLocale !== locale) {
       setLocale(storedLocale as Locale);
     }
-  }, []);
+  }, [locale, setLocale]);
 
   return (
     <IntlProvider locale={locale} messages={localeObject[locale]}>

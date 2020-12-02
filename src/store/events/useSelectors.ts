@@ -18,7 +18,7 @@ export const useEventDataByEventId = (eventId: string) => {
     if (!eventData) {
       fetchEventById();
     }
-  }, []);
+  }, [fetchEventById, eventData]);
 
   return eventData;
 };
@@ -32,7 +32,7 @@ export const useAllEventsData = () => {
     if (!Object.keys(eventsData).length) {
       fetchEvents();
     }
-  }, []);
+  }, [eventsData, fetchEvents]);
 
   return {
     eventsData,

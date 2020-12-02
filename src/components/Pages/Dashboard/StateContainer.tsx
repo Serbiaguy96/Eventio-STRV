@@ -50,7 +50,7 @@ const StateContainer = ({
 
   useEffect(() => {
     reloadEvents();
-  }, [visibleEvents, eventsPerRow]);
+  }, [visibleEvents, eventsPerRow, reloadEvents]);
 
   const getRightEventsArr = () => {
     const allEventsArr = Object.values(allEvents);

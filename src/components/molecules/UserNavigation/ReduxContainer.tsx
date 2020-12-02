@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  useIsUserLoggedIn,
-  useUserData,
-} from "../../../store/authentication/useSelectors";
+import { useUserData } from "../../../store/authentication/useSelectors";
 import { useLogUserOut } from "../../../store/authentication/useActions";
 import UserNavigation from "./UserNavigation";
 

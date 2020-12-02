@@ -1,7 +1,5 @@
 import styled from "@emotion/styled";
 
-import loader from "../../../assets/images/loader.png";
-
 export const LoaderContainer = styled.div`
   height: 100%;
   width: 100%;
